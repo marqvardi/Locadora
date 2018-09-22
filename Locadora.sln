@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.27703.2035
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Locadora", "Locadora\Locadora.csproj", "{439A4B52-D502-475A-81E1-CBA6F8E3FF18}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Locadora.DataAccess", "Locadora.DataAccess\Locadora.DataAccess.csproj", "{9BB4CE06-925E-4CF6-84C1-66AA03421106}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Locadora.SQL", "Locadora.SQL\Locadora.SQL.sqlproj", "{E2B9C2F4-5EE2-4B7F-8338-629040D1D980}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,16 @@ Global
 		{439A4B52-D502-475A-81E1-CBA6F8E3FF18}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{439A4B52-D502-475A-81E1-CBA6F8E3FF18}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{439A4B52-D502-475A-81E1-CBA6F8E3FF18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BB4CE06-925E-4CF6-84C1-66AA03421106}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BB4CE06-925E-4CF6-84C1-66AA03421106}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BB4CE06-925E-4CF6-84C1-66AA03421106}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BB4CE06-925E-4CF6-84C1-66AA03421106}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2B9C2F4-5EE2-4B7F-8338-629040D1D980}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2B9C2F4-5EE2-4B7F-8338-629040D1D980}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2B9C2F4-5EE2-4B7F-8338-629040D1D980}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{E2B9C2F4-5EE2-4B7F-8338-629040D1D980}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2B9C2F4-5EE2-4B7F-8338-629040D1D980}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2B9C2F4-5EE2-4B7F-8338-629040D1D980}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

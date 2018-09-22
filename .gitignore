@@ -3,5 +3,13 @@
 ################################################################################
 
 /.vs
-/Locadora/bin/Debug
+/Locadora/bin
 /Locadora/obj
+/Locadora.DataAccess/bin
+/Locadora.DataAccess/obj
+/packages
+/Locadora.SQL/obj
+/Locadora.SQL/bin
+/Locadora.SQL/Import Schema Logs
+ 
+

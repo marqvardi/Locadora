@@ -34,6 +34,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,17 +47,88 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConectarSQLClass.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="AlugarForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="AlugarForm.Designer.cs">
+      <DependentUpon>AlugarForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MidiaCadastroForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MidiaCadastroForm.Designer.cs">
+      <DependentUpon>MidiaCadastroForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NovoClienteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NovoClienteForm.Designer.cs">
+      <DependentUpon>NovoClienteForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PesquisarClienteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PesquisarClienteForm.Designer.cs">
+      <DependentUpon>PesquisarClienteForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProcurarProdutoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProcurarProdutoForm.Designer.cs">
+      <DependentUpon>ProcurarProdutoForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="SamplesDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SamplesDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SamplesDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SamplesDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SetPrecoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SetPrecoForm.Designer.cs">
+      <DependentUpon>SetPrecoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TelaAlugarForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TelaAlugarForm.Designer.cs">
+      <DependentUpon>TelaAlugarForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AlugarForm.resx">
+      <DependentUpon>AlugarForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MidiaCadastroForm.resx">
+      <DependentUpon>MidiaCadastroForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NovoClienteForm.resx">
+      <DependentUpon>NovoClienteForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PesquisarClienteForm.resx">
+      <DependentUpon>PesquisarClienteForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProcurarProdutoForm.resx">
+      <DependentUpon>ProcurarProdutoForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -66,18 +139,50 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="SetPrecoForm.resx">
+      <DependentUpon>SetPrecoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelaAlugarForm.resx">
+      <DependentUpon>TelaAlugarForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Locadora.DataAccess.Entidades.Endereco.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
+    <None Include="SamplesDataSet.xsc">
+      <DependentUpon>SamplesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="SamplesDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SamplesDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SamplesDataSet.xss">
+      <DependentUpon>SamplesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="SamplesDataSet1.xsc">
+      <DependentUpon>SamplesDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="SamplesDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SamplesDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SamplesDataSet1.xss">
+      <DependentUpon>SamplesDataSet1.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <ProjectReference Include="..\Locadora.DataAccess\Locadora.DataAccess.csproj">
+      <Project>{9bb4ce06-925e-4cf6-84c1-66aa03421106}</Project>
+      <Name>Locadora.DataAccess</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

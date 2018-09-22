@@ -18,9 +18,6 @@ namespace Locadora
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Formulario());
 
-
-
-
         }
     }
 }
