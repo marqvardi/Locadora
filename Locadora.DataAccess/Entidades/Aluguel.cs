@@ -6,7 +6,7 @@ namespace Locadora.DataAccess.Entidades
     public class Aluguel
     {
         /// <summary>
-        /// 
+        /// TEstandoessa eiea
         /// </summary>
         public DateTime DataHora { get; set; }
         public decimal ValorSubTotal { get; set; }
