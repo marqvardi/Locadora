@@ -10,6 +10,7 @@
 /packages
 /Locadora.SQL/obj
 /Locadora.SQL/bin
-/Locadora.SQL/Import Schema Logs
- 
-
+/Locadora.SQL/Locadora.SQL.dbmdl
+/Locadora.SQL/Locadora.SQL.jfm
+/Locadora.SQL/Import Schema Logs 
+/Locadora.SQL/*.jfm
