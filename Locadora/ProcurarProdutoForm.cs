@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Locadora.DataAccess.DataAccess;
+using Locadora.DataAccess.Entidades;
 
 namespace Locadora
 {
@@ -30,11 +31,11 @@ namespace Locadora
             }
             if (radioButtonProcurarPorCategoria.Checked)
             {
-                if (comboBoxProcurarPorCategoria.Text == "Drama")
-                {
-                    md.PesquisarPorCategoria();
-                    //dataGridViewProcurarTituloOuCategoria.DataSource = md.PesquisarPorCategoria(comboBoxProcurarPorCategoria.SelectedItem.ToString());
-                }
+                string cat = comboBoxProcurarPorCategoria.Text;
+                
+               // md.PesquisarPorCategoria(comboBoxProcurarPorCategoria.Text);
+              //dataGridViewProcurarTituloOuCategoria.DataSource = md.PesquisarPorCategoria(comboBoxProcurarPorCategoria.SelectedItem.ToString());
+                
                 //dataGridViewProcurarTituloOuCategoria.DataSource = md.PesquisarPorCategoria("Drama");
                 comboBoxProcurarPorCategoria.ResetText();
             }
@@ -43,7 +44,7 @@ namespace Locadora
         private void ProcurarProdutoForm_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'samplesDataSet.Midia' table. You can move, or remove it, as needed.
-            this.midiaTableAdapter.Fill(this.samplesDataSet.Midia);
+            //this.midiaTableAdapter.Fill(this.samplesDataSet.Midia);
 
         }
     }

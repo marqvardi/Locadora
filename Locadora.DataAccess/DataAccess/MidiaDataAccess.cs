@@ -9,7 +9,14 @@ namespace Locadora.DataAccess.DataAccess
         public void InsertSQLMidia(Midia midia)
         {
             ConectarSQL();
-            conexao.Execute("insert into midia (Titulo, quantidade, categoria, tipomidia) values (@Titulo, @quantidade, @categoria, @tipomidia)", midia);
+            conexao.Execute("insert into midia (Titulo, quantidadecomprada, tipo_midia, id_categoria) values (@Titulo, @QuantidadeComprada, @tipomidia,(Select Id from Categoria where Id = @Id_categoria))", midia);
+            DesconectarSQL();
+        }
+
+        public void InsertSQLTipoCategoria(Categoria categoria)
+        {
+            ConectarSQL();
+            conexao.Execute("insert into Categoria (Nome, Ativo) values (@nome, @ativo)", categoria);
             DesconectarSQL();
         }
 
@@ -22,10 +29,10 @@ namespace Locadora.DataAccess.DataAccess
             return resultados;
         }
 
-        public IEnumerable<Midia> PesquisarPorCategoria()
+        public IEnumerable<Midia> PesquisarPorCategoria(string categoria)
         {
             ConectarSQL();
-            IEnumerable<Midia> resultados = conexao.Query<Midia>("select categoria from Midia where categoria = 'Drama'");
+            IEnumerable<Midia> resultados = conexao.Query<Midia>("select * from Midia where Id_categoria = @categoria");
             DesconectarSQL();
 
             return resultados;

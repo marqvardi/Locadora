@@ -47,7 +47,6 @@ namespace Locadora
         {
             if (e.RowIndex < 0) return;
             DataGridViewRow LinhaSelecionada = dataGridViewPesquisarCliente.Rows[e.RowIndex];
-
           
             clienteCorrente.Id = Convert.ToInt32(LinhaSelecionada.Cells[0].FormattedValue);
             clienteCorrente.Nome = LinhaSelecionada.Cells[1].FormattedValue.ToString();
@@ -55,17 +54,14 @@ namespace Locadora
 
             ClienteDataAccess cn = new ClienteDataAccess();
 
-            cn.UpdateSQLCliente(clienteCorrente);
-            
+            cn.UpdateSQLCliente(clienteCorrente);            
         }
 
         private void dgvEndereco_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0) return;
             DataGridViewRow LinhaSelecionada = dgvEndereco.Rows[e.RowIndex];
-            Endereco enderecoCorrente = clienteCorrente.Enderecos[e.RowIndex];
-
-          
+            Endereco enderecoCorrente = clienteCorrente.Enderecos[e.RowIndex];          
 
             enderecoCorrente.Logradouro = LinhaSelecionada.Cells[1].FormattedValue.ToString();
             enderecoCorrente.Id = Convert.ToInt32(LinhaSelecionada.Cells[2].FormattedValue);
@@ -76,7 +72,6 @@ namespace Locadora
 
             ClienteDataAccess cn = new ClienteDataAccess();
             cn.UpdateSQLEndereco(enderecoCorrente);
-
         }
 
 

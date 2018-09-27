@@ -5,5 +5,5 @@
         Blueray,
         DVD,
         VHS,
-    }
+    }  
 }

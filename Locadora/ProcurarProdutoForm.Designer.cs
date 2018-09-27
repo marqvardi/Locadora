@@ -46,7 +46,7 @@
             // buttonProcurar
             // 
             this.buttonProcurar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonProcurar.Location = new System.Drawing.Point(491, 84);
+            this.buttonProcurar.Location = new System.Drawing.Point(815, 84);
             this.buttonProcurar.Name = "buttonProcurar";
             this.buttonProcurar.Size = new System.Drawing.Size(75, 23);
             this.buttonProcurar.TabIndex = 0;
@@ -86,19 +86,23 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxProcurarPorTitulo.Location = new System.Drawing.Point(158, 27);
             this.textBoxProcurarPorTitulo.Name = "textBoxProcurarPorTitulo";
-            this.textBoxProcurarPorTitulo.Size = new System.Drawing.Size(408, 20);
+            this.textBoxProcurarPorTitulo.Size = new System.Drawing.Size(732, 20);
             this.textBoxProcurarPorTitulo.TabIndex = 3;
             // 
             // comboBoxProcurarPorCategoria
             // 
             this.comboBoxProcurarPorCategoria.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxProcurarPorCategoria.DataSource = this.samplesDataSet;
-            this.comboBoxProcurarPorCategoria.DisplayMember = "Midia.Categoria";
             this.comboBoxProcurarPorCategoria.FormattingEnabled = true;
+            this.comboBoxProcurarPorCategoria.Items.AddRange(new object[] {
+            "Suspense",
+            "Terror",
+            "Acao",
+            "Comedia",
+            "Aventura"});
             this.comboBoxProcurarPorCategoria.Location = new System.Drawing.Point(158, 84);
             this.comboBoxProcurarPorCategoria.Name = "comboBoxProcurarPorCategoria";
-            this.comboBoxProcurarPorCategoria.Size = new System.Drawing.Size(267, 21);
+            this.comboBoxProcurarPorCategoria.Size = new System.Drawing.Size(591, 21);
             this.comboBoxProcurarPorCategoria.TabIndex = 4;
             // 
             // samplesDataSet
@@ -119,7 +123,7 @@
             this.dataGridViewProcurarTituloOuCategoria.MultiSelect = false;
             this.dataGridViewProcurarTituloOuCategoria.Name = "dataGridViewProcurarTituloOuCategoria";
             this.dataGridViewProcurarTituloOuCategoria.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewProcurarTituloOuCategoria.Size = new System.Drawing.Size(542, 307);
+            this.dataGridViewProcurarTituloOuCategoria.Size = new System.Drawing.Size(866, 263);
             this.dataGridViewProcurarTituloOuCategoria.TabIndex = 5;
             // 
             // midiaBindingSource
@@ -136,7 +140,7 @@
             this.AcceptButton = this.buttonProcurar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(584, 444);
+            this.ClientSize = new System.Drawing.Size(908, 400);
             this.Controls.Add(this.dataGridViewProcurarTituloOuCategoria);
             this.Controls.Add(this.comboBoxProcurarPorCategoria);
             this.Controls.Add(this.textBoxProcurarPorTitulo);

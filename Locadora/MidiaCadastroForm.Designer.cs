@@ -45,7 +45,7 @@
             this.labelDVDTitulo.Location = new System.Drawing.Point(18, 34);
             this.labelDVDTitulo.Name = "labelDVDTitulo";
             this.labelDVDTitulo.Size = new System.Drawing.Size(33, 13);
-            this.labelDVDTitulo.TabIndex = 1;
+            this.labelDVDTitulo.TabIndex = 0;
             this.labelDVDTitulo.Text = "Titulo";
             // 
             // textBoxCadastroTitulo
@@ -53,7 +53,7 @@
             this.textBoxCadastroTitulo.Location = new System.Drawing.Point(96, 27);
             this.textBoxCadastroTitulo.Name = "textBoxCadastroTitulo";
             this.textBoxCadastroTitulo.Size = new System.Drawing.Size(324, 20);
-            this.textBoxCadastroTitulo.TabIndex = 3;
+            this.textBoxCadastroTitulo.TabIndex = 1;
             // 
             // labelDVDQuantidade
             // 
@@ -61,7 +61,7 @@
             this.labelDVDQuantidade.Location = new System.Drawing.Point(18, 124);
             this.labelDVDQuantidade.Name = "labelDVDQuantidade";
             this.labelDVDQuantidade.Size = new System.Drawing.Size(62, 13);
-            this.labelDVDQuantidade.TabIndex = 4;
+            this.labelDVDQuantidade.TabIndex = 6;
             this.labelDVDQuantidade.Text = "Quantidade";
             // 
             // textBoxCadastroQuantidade
@@ -69,14 +69,14 @@
             this.textBoxCadastroQuantidade.Location = new System.Drawing.Point(96, 121);
             this.textBoxCadastroQuantidade.Name = "textBoxCadastroQuantidade";
             this.textBoxCadastroQuantidade.Size = new System.Drawing.Size(121, 20);
-            this.textBoxCadastroQuantidade.TabIndex = 5;
+            this.textBoxCadastroQuantidade.TabIndex = 7;
             // 
             // buttonProdutoCadastrar
             // 
             this.buttonProdutoCadastrar.Location = new System.Drawing.Point(189, 163);
             this.buttonProdutoCadastrar.Name = "buttonProdutoCadastrar";
             this.buttonProdutoCadastrar.Size = new System.Drawing.Size(75, 23);
-            this.buttonProdutoCadastrar.TabIndex = 6;
+            this.buttonProdutoCadastrar.TabIndex = 8;
             this.buttonProdutoCadastrar.Text = "Cadastrar";
             this.buttonProdutoCadastrar.UseVisualStyleBackColor = true;
             this.buttonProdutoCadastrar.Click += new System.EventHandler(this.buttonProdutoCadastrar_Click);
@@ -85,15 +85,16 @@
             // 
             this.comboBoxCadastroCategoria.FormattingEnabled = true;
             this.comboBoxCadastroCategoria.Items.AddRange(new object[] {
+            "Suspense",
+            "Terror",
             "Acao",
             "Comedia",
-            "Drama",
-            "Suspense",
-            "Terror"});
+            "Aventura",
+            ""});
             this.comboBoxCadastroCategoria.Location = new System.Drawing.Point(96, 72);
             this.comboBoxCadastroCategoria.Name = "comboBoxCadastroCategoria";
             this.comboBoxCadastroCategoria.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxCadastroCategoria.TabIndex = 7;
+            this.comboBoxCadastroCategoria.TabIndex = 3;
             // 
             // labelDVDCategoria
             // 
@@ -101,7 +102,7 @@
             this.labelDVDCategoria.Location = new System.Drawing.Point(18, 80);
             this.labelDVDCategoria.Name = "labelDVDCategoria";
             this.labelDVDCategoria.Size = new System.Drawing.Size(52, 13);
-            this.labelDVDCategoria.TabIndex = 8;
+            this.labelDVDCategoria.TabIndex = 2;
             this.labelDVDCategoria.Text = "Categoria";
             // 
             // labelTipoMidia
@@ -110,7 +111,7 @@
             this.labelTipoMidia.Location = new System.Drawing.Point(248, 80);
             this.labelTipoMidia.Name = "labelTipoMidia";
             this.labelTipoMidia.Size = new System.Drawing.Size(32, 13);
-            this.labelTipoMidia.TabIndex = 9;
+            this.labelTipoMidia.TabIndex = 4;
             this.labelTipoMidia.Text = "Midia";
             // 
             // comboBoxCadastroMidia
@@ -118,11 +119,12 @@
             this.comboBoxCadastroMidia.FormattingEnabled = true;
             this.comboBoxCadastroMidia.Items.AddRange(new object[] {
             "DVD",
-            "VHS"});
+            "VHS",
+            "Blueray"});
             this.comboBoxCadastroMidia.Location = new System.Drawing.Point(299, 72);
             this.comboBoxCadastroMidia.Name = "comboBoxCadastroMidia";
             this.comboBoxCadastroMidia.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxCadastroMidia.TabIndex = 10;
+            this.comboBoxCadastroMidia.TabIndex = 5;
             // 
             // MidiaCadastroForm
             // 

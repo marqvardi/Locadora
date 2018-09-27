@@ -12,8 +12,7 @@ namespace Locadora.DataAccess.DataAccess
     {       
 
         public void InsertSQLCliente(Cliente cliente)
-        {
-            
+        {            
             ConectarSQL();
             //Explicar melhor esse lance de "output inserted.id"
             int id = conexao.Query<int>("insert into Cliente (Nome, Datanascimento, ativo) output inserted.Id values (@Nome, @datanascimento, @ativo)", cliente).Single();
