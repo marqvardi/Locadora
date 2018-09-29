@@ -9,7 +9,8 @@
         public int QuantidadeComprada { get; set; }
         public int QuantidadeAlugada { get; set; }
         public int QuantidaDisponivel { get; set; }
-        public TiposMidia TipoMidia { get; set; }       
-        public int Id_categoria { get; set; }
+        public TiposMidia TipoMidia { get; set; }    
+        public TipoDeCategoria TipoCategoria { get; set; }
+        
     }
 }

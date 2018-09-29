@@ -23,16 +23,18 @@ namespace Locadora.DataAccess.DataAccess
         public IEnumerable<Midia> PesquisarPorTitulo(string titulo)
         {
             ConectarSQL();
-            IEnumerable<Midia> resultados = conexao.Query<Midia>("select * from Midia where Titulo like @titulo", new { titulo = $"%{titulo}%" });
+            IEnumerable<Midia> resultados = conexao.Query<Midia>("select *, id_categoria as TipoCategoria, tipo_midia as TipoMidia from Midia where Titulo like @titulo", new { titulo = $"%{titulo}%" });
             DesconectarSQL();
 
             return resultados;
         }
 
-        public IEnumerable<Midia> PesquisarPorCategoria(string categoria)
+        public IEnumerable<Midia> PesquisarPorCategoria(int categoria)
         {
             ConectarSQL();
-            IEnumerable<Midia> resultados = conexao.Query<Midia>("select * from Midia where Id_categoria = @categoria");
+            IEnumerable<Midia> resultados = conexao.Query<Midia>("select * from Midia where Id_categoria like @categoria");
+
+            //IEnumerable<Midia> resultados = conexao.Query<Midia>("select * from Midia where Id_categoria like @categoria");
             DesconectarSQL();
 
             return resultados;

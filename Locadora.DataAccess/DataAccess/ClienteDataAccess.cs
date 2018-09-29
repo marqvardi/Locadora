@@ -10,7 +10,10 @@ namespace Locadora.DataAccess.DataAccess
 {
     public class ClienteDataAccess : DataAccessBase
     {       
-
+        /// <summary>
+        /// Insere um cliente no banco de dados       
+        /// </summary>
+        /// <param name="cliente">Objeto cliente a ser inserido</param>
         public void InsertSQLCliente(Cliente cliente)
         {            
             ConectarSQL();

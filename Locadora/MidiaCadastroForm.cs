@@ -47,23 +47,23 @@ namespace Locadora
             }
             if (comboBoxCadastroCategoria.Text == "Terror")
             {
-                c.Id = Convert.ToInt32(TipoDeCategoria.Terror);
-                c.Nome = "Terror";
+                c.Id = 1;
+                c.Nome = Convert.ToString(TipoDeCategoria.Terror);              
             }
             if (comboBoxCadastroCategoria.Text == "Acao")
             {
-                c.Id = Convert.ToInt32(TipoDeCategoria.Acao);
-                c.Nome = "Acao";
+                c.Id = 2;
+                c.Nome = Convert.ToString(TipoDeCategoria.Acao);
             }
             if (comboBoxCadastroCategoria.Text == "Comedia")
             {
-                c.Id = Convert.ToInt32(TipoDeCategoria.Comedia);
-                c.Nome = "Comedia";                
+                c.Id = 3;
+                c.Nome = Convert.ToString(TipoDeCategoria.Comedia);
             }
             if (comboBoxCadastroCategoria.Text == "Aventura")
             {
-                c.Id = Convert.ToInt32(TipoDeCategoria.Aventura);
-                c.Nome = "Aventura";
+                c.Id = 4;
+                c.Nome = Convert.ToString(TipoDeCategoria.Aventura);
             }
             c.Ativo = true;
 
@@ -72,17 +72,17 @@ namespace Locadora
             if (comboBoxCadastroMidia.Text == "Blueray")
             {                
                 m.TipoMidia = TiposMidia.Blueray;
-                m.Id_categoria = c.Id;
+               // m.Id_categoria = c.Id;
             }
             if (comboBoxCadastroMidia.Text == "DVD")
             {
                 m.TipoMidia = TiposMidia.DVD;
-                m.Id_categoria = c.Id;
+              //  m.Id_categoria = c.Id;
             }
             if (comboBoxCadastroMidia.Text == "VHS")
             {
                 m.TipoMidia = TiposMidia.VHS;
-                m.Id_categoria = c.Id;                
+              //  m.Id_categoria = c.Id;                
             }
            
             md.InsertSQLMidia(m);
