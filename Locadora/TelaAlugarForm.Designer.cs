@@ -63,7 +63,7 @@
             this.dataGridViewAlugar.MultiSelect = false;
             this.dataGridViewAlugar.Name = "dataGridViewAlugar";
             this.dataGridViewAlugar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewAlugar.Size = new System.Drawing.Size(714, 318);
+            this.dataGridViewAlugar.Size = new System.Drawing.Size(744, 346);
             this.dataGridViewAlugar.TabIndex = 2;
             // 
             // AlugarCol
@@ -109,7 +109,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxTituloSearch.Location = new System.Drawing.Point(172, 69);
             this.textBoxTituloSearch.Name = "textBoxTituloSearch";
-            this.textBoxTituloSearch.Size = new System.Drawing.Size(568, 20);
+            this.textBoxTituloSearch.Size = new System.Drawing.Size(598, 20);
             this.textBoxTituloSearch.TabIndex = 6;
             // 
             // label3
@@ -124,7 +124,7 @@
             // buttonProcurar
             // 
             this.buttonProcurar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonProcurar.Location = new System.Drawing.Point(662, 104);
+            this.buttonProcurar.Location = new System.Drawing.Point(692, 104);
             this.buttonProcurar.Name = "buttonProcurar";
             this.buttonProcurar.Size = new System.Drawing.Size(79, 23);
             this.buttonProcurar.TabIndex = 8;
@@ -134,7 +134,8 @@
             // 
             // buttonAlugar
             // 
-            this.buttonAlugar.Location = new System.Drawing.Point(674, 493);
+            this.buttonAlugar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonAlugar.Location = new System.Drawing.Point(704, 505);
             this.buttonAlugar.Name = "buttonAlugar";
             this.buttonAlugar.Size = new System.Drawing.Size(75, 23);
             this.buttonAlugar.TabIndex = 9;
@@ -165,7 +166,7 @@
             this.AcceptButton = this.buttonProcurar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(774, 540);
+            this.ClientSize = new System.Drawing.Size(804, 540);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.buttonAlugar);

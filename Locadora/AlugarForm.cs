@@ -23,21 +23,9 @@ namespace Locadora
         private void dataGridViewAlugar_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0) return;
+
             rowIndex = e.RowIndex;
-        }     
-
-        //private void dataGridViewAlugar_DoubleClick(object sender, EventArgs e)
-        //{
-        //    DataGridViewRow LinhaSelecionada = dataGridViewAlugar.Rows[rowIndex];
-        //    int id = Convert.ToInt32(LinhaSelecionada.Cells[0].FormattedValue);
-        //    string nome = (LinhaSelecionada.Cells[1].FormattedValue).ToString();
-
-        //    TelaAlugarForm tl = new TelaAlugarForm(id, nome);
-        //    tl.Show();
-        //    //Como fazer para o formulario anterior ficar inacessivel?
-
-        //    tl.PuxarNome1();
-        //}
+        }
 
         private void buttonPesquisar_Click(object sender, EventArgs e)
         {
@@ -57,17 +45,20 @@ namespace Locadora
         }
 
         private void dataGridViewAlugar_DoubleClick(object sender, EventArgs e)
-        {
+        {            
             DataGridViewRow LinhaSelecionada = dataGridViewAlugar.Rows[rowIndex];
             int id = Convert.ToInt32(LinhaSelecionada.Cells[0].FormattedValue);
             string nome = (LinhaSelecionada.Cells[1].FormattedValue).ToString();
 
             TelaAlugarForm tl = new TelaAlugarForm(id, nome);
-            tl.Show();
+            tl.Show();           
+
             //Como fazer para o formulario anterior ficar inacessivel?
 
             tl.PuxarNome1();
             //Da' pau quando o formulario isDisposed. Nao da refresh
+            //this.Close(); 
+
         }
     }
 }

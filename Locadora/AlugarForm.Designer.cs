@@ -109,7 +109,7 @@
             this.dataGridViewAlugar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewAlugar.Size = new System.Drawing.Size(596, 325);
             this.dataGridViewAlugar.TabIndex = 13;
-            this.dataGridViewAlugar.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewAlugar_CellClick);
+            this.dataGridViewAlugar.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewAlugar_CellClick);
             this.dataGridViewAlugar.DoubleClick += new System.EventHandler(this.dataGridViewAlugar_DoubleClick);
             // 
             // AlugarForm

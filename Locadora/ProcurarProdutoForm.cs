@@ -31,34 +31,17 @@ namespace Locadora
             }
             if (radioButtonProcurarPorCategoria.Checked)
             {
-                int id = 0;
-                if (comboBoxProcurarPorCategoria.Text == "Suspense")
-                {
-                    id = 0;                    
-                }
-                if (comboBoxProcurarPorCategoria.Text == "Terror")
-                {
-                    id = 1;
-                }
-                if (comboBoxProcurarPorCategoria.Text == "Acao")
-                {
-                    id = 2;
-                }
-                if (comboBoxProcurarPorCategoria.Text == "Comedia")
-                {
-                    id = 3;
-                }
-                if (comboBoxProcurarPorCategoria.Text == "Aventura")
-                {
-                    id = 4;
-                }
+                if (comboBoxProcurarPorCategoria.Text == "") return;
                 else
                 {
-                    return;
+                   //dataGridViewProcurarTituloOuCategoria.DataSource = md.PesquisarPorCategoria(Convert.ToInt32(comboBoxProcurarPorCategoria.Text));
                 }
-                md.PesquisarPorCategoria(id);
-                //dataGridViewProcurarTituloOuCategoria.DataSource = md.PesquisarPorCategoria(comboBoxProcurarPorCategoria.SelectedItem.ToString());
 
+                //string current = (string)comboBoxProcurarPorCategoria.SelectedItem;
+
+                //md.PesquisarPorCategoria(current);
+                //md.PesquisarPorCategoria(2);
+                
                 //dataGridViewProcurarTituloOuCategoria.DataSource = md.PesquisarPorCategoria("Drama");
                 comboBoxProcurarPorCategoria.ResetText();
             }

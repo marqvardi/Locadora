@@ -1,6 +1,7 @@
 ﻿using Dapper;
 using Locadora.DataAccess.Entidades;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 
 namespace Locadora.DataAccess.DataAccess
 {
@@ -27,23 +28,18 @@ namespace Locadora.DataAccess.DataAccess
             DesconectarSQL();
 
             return resultados;
-        }
+        }      
 
-        public IEnumerable<Midia> PesquisarPorCategoria(int categoria)
-        {
-            ConectarSQL();
-            IEnumerable<Midia> resultados = conexao.Query<Midia>("select * from Midia where Id_categoria like @categoria");
+        //public IEnumerable<Midia> PesquisarPorCategoria(int categoria)
+        //{
+        //    ConectarSQL();
+        //    IEnumerable<Midia> resultados = conexao.Query<Midia>("select * from Midia where id_categoria like @categoria");
 
-            //IEnumerable<Midia> resultados = conexao.Query<Midia>("select * from Midia where Id_categoria like @categoria");
-            DesconectarSQL();
+        //    //IEnumerable<Midia> resultados = conexao.Query<Midia>("select * from Midia where Id_categoria like @categoria");
+        //    DesconectarSQL();
 
-            return resultados;
-        }
-
-        public void TituloAlugado(int idCliente, int idTitulo)
-        {
-
-        }
+        //    return resultados;
+        //}           
 
         //public string PesquisarPorCategoria(string cat)
         //{

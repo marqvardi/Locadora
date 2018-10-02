@@ -48,7 +48,7 @@ namespace Locadora
             if (comboBoxCadastroCategoria.Text == "Terror")
             {
                 c.Id = 1;
-                c.Nome = Convert.ToString(TipoDeCategoria.Terror);              
+                c.Nome = Convert.ToString(TipoDeCategoria.Terror);
             }
             if (comboBoxCadastroCategoria.Text == "Acao")
             {
@@ -72,17 +72,17 @@ namespace Locadora
             if (comboBoxCadastroMidia.Text == "Blueray")
             {                
                 m.TipoMidia = TiposMidia.Blueray;
-               // m.Id_categoria = c.Id;
+                m.Id_categoria = c.Id;
             }
             if (comboBoxCadastroMidia.Text == "DVD")
             {
                 m.TipoMidia = TiposMidia.DVD;
-              //  m.Id_categoria = c.Id;
+                m.Id_categoria = c.Id;
             }
             if (comboBoxCadastroMidia.Text == "VHS")
             {
                 m.TipoMidia = TiposMidia.VHS;
-              //  m.Id_categoria = c.Id;                
+                m.Id_categoria = c.Id;                
             }
            
             md.InsertSQLMidia(m);
