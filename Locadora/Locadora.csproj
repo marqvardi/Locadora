@@ -53,6 +53,12 @@
     <Compile Include="AlugarForm.Designer.cs">
       <DependentUpon>AlugarForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CaixaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CaixaForm.Designer.cs">
+      <DependentUpon>CaixaForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,6 +76,12 @@
     </Compile>
     <Compile Include="NovoClienteForm.Designer.cs">
       <DependentUpon>NovoClienteForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ValoresForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ValoresForm.Designer.cs">
+      <DependentUpon>ValoresForm.cs</DependentUpon>
     </Compile>
     <Compile Include="PesquisarClienteForm.cs">
       <SubType>Form</SubType>
@@ -115,6 +127,9 @@
     <EmbeddedResource Include="AlugarForm.resx">
       <DependentUpon>AlugarForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CaixaForm.resx">
+      <DependentUpon>CaixaForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -123,6 +138,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NovoClienteForm.resx">
       <DependentUpon>NovoClienteForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ValoresForm.resx">
+      <DependentUpon>ValoresForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PesquisarClienteForm.resx">
       <DependentUpon>PesquisarClienteForm.cs</DependentUpon>

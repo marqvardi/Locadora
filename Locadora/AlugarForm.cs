@@ -53,11 +53,9 @@ namespace Locadora
             TelaAlugarForm tl = new TelaAlugarForm(id, nome);
             tl.Show();           
 
-            //Como fazer para o formulario anterior ficar inacessivel?
+            //Como fazer para o formulario anterior ficar inacessivel? ShowDialog()?
 
-            tl.PuxarNome1();
-            //Da' pau quando o formulario isDisposed. Nao da refresh
-            //this.Close(); 
+            tl.PuxarNome();           
 
         }
     }

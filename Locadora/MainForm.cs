@@ -13,12 +13,11 @@ using System.Data.SqlClient;
 namespace Locadora
 {
     public partial class Formulario : Form
-    {
-
+    {        
         public Formulario()
         {
             InitializeComponent();           
-        }
+        }        
         
         private NovoClienteForm _novoClienteForm;
         private PesquisarClienteForm _pesquisarClienteForm;       
@@ -26,6 +25,8 @@ namespace Locadora
         private ProcurarProdutoForm _procurarProdutoForm;
         private AlugarForm _alugarForm;
         private SetPrecoForm _setPrecoForm;
+        private ValoresForm _parametrosForm;
+        private CaixaForm _caixaForm;
         
         private void cadastrarNovosClientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -44,6 +45,8 @@ namespace Locadora
             }
                     
         }
+
+        
         
         private void procurarClientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -132,6 +135,39 @@ namespace Locadora
             }
         }
 
+        private void cadastrarParametrosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (_parametrosForm == null || _parametrosForm.IsDisposed)
+            {
+                _parametrosForm = new ValoresForm
+                {
+                    MdiParent = this
+                };
+                _parametrosForm.Show();
+            }
+            else
+            {
+                _parametrosForm.Focus();
+            }
 
-}
+        }
+
+        private void caixaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (_caixaForm == null || _caixaForm.IsDisposed)
+            {
+                _caixaForm = new CaixaForm
+                {
+                    MdiParent = this
+                };
+                _caixaForm.Show();
+            }
+            else
+            {
+                _caixaForm.Focus();
+            }
+
+
+        }
+    }
 }

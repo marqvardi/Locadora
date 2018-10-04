@@ -18,6 +18,8 @@ namespace Locadora
         private int _id;
         private string _nome;
 
+        List<Midia> resultados = new List<Midia>();
+
         //public TelaAlugarForm()
         //{
         //    InitializeComponent();
@@ -33,16 +35,6 @@ namespace Locadora
         public void PuxarNome()
         {
             ClienteDataAccess cn = new ClienteDataAccess();
-            dataGridViewAlugar.DataSource = cn.AlugarPorId(_id);
-
-            //labelID.Text = Convert.ToString(cn.PesquisarPorId(_id));
-            //textBoxId.Text = Convert.ToString(cn.PesquisarPorId(_id));
-        }
-
-        public void PuxarNome1()
-        {
-            ClienteDataAccess cn = new ClienteDataAccess();
-            //dataGridView1.DataSource = cn.AlugarPorId(_id);
             label4.Text = Convert.ToString(_id);
             label5.Text = _nome;
         }
@@ -52,6 +44,8 @@ namespace Locadora
             MidiaDataAccess md = new MidiaDataAccess();
 
             dataGridViewAlugar.DataSource = md.PesquisarPorTitulo(textBoxTituloSearch.Text);
+            textBoxTituloSearch.Clear();
+            textBoxTituloSearch.Focus();            
         }
 
         private void buttonAlugar_Click(object sender, EventArgs e)
@@ -60,7 +54,17 @@ namespace Locadora
 
             if (result == DialogResult.No) return;
 
+            for (int i = 0; i < dataGridViewAlugar.Rows.Count; i++)
+            {
+                bool isChecked = (bool)dataGridViewAlugar.Rows[i].Cells[0].Value;
+                if (isChecked == true)
+                {
+                    
+                }
+            }
+
             MessageBox.Show("Titulo's' adicinado's' com sucesso.");
+            this.Close();
         }        
     }
 }

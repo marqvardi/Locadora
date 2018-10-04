@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridViewAlugar = new System.Windows.Forms.DataGridView();
-            this.AlugarCol = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.samplesDataSet1 = new Locadora.SamplesDataSet1();
             this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.clienteTableAdapter = new Locadora.SamplesDataSet1TableAdapters.ClienteTableAdapter();
@@ -42,34 +41,32 @@
             this.buttonAlugar = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.dataGridViewJaAlugadoPeloCliente = new System.Windows.Forms.DataGridView();
+            this.label6 = new System.Windows.Forms.Label();
+            this.dataGridViewListaCarrinho = new System.Windows.Forms.DataGridView();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAlugar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.samplesDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewJaAlugadoPeloCliente)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListaCarrinho)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridViewAlugar
             // 
             this.dataGridViewAlugar.AllowUserToAddRows = false;
             this.dataGridViewAlugar.AllowUserToDeleteRows = false;
-            this.dataGridViewAlugar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewAlugar.AllowUserToOrderColumns = true;
             this.dataGridViewAlugar.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridViewAlugar.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenHorizontal;
             this.dataGridViewAlugar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewAlugar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.AlugarCol});
             this.dataGridViewAlugar.Location = new System.Drawing.Point(35, 153);
             this.dataGridViewAlugar.MultiSelect = false;
             this.dataGridViewAlugar.Name = "dataGridViewAlugar";
+            this.dataGridViewAlugar.ReadOnly = true;
             this.dataGridViewAlugar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewAlugar.Size = new System.Drawing.Size(744, 346);
+            this.dataGridViewAlugar.Size = new System.Drawing.Size(1007, 262);
             this.dataGridViewAlugar.TabIndex = 2;
-            // 
-            // AlugarCol
-            // 
-            this.AlugarCol.HeaderText = "Alugar";
-            this.AlugarCol.Name = "AlugarCol";
             // 
             // samplesDataSet1
             // 
@@ -109,7 +106,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxTituloSearch.Location = new System.Drawing.Point(172, 69);
             this.textBoxTituloSearch.Name = "textBoxTituloSearch";
-            this.textBoxTituloSearch.Size = new System.Drawing.Size(598, 20);
+            this.textBoxTituloSearch.Size = new System.Drawing.Size(861, 20);
             this.textBoxTituloSearch.TabIndex = 6;
             // 
             // label3
@@ -124,7 +121,7 @@
             // buttonProcurar
             // 
             this.buttonProcurar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonProcurar.Location = new System.Drawing.Point(692, 104);
+            this.buttonProcurar.Location = new System.Drawing.Point(955, 104);
             this.buttonProcurar.Name = "buttonProcurar";
             this.buttonProcurar.Size = new System.Drawing.Size(79, 23);
             this.buttonProcurar.TabIndex = 8;
@@ -135,7 +132,7 @@
             // buttonAlugar
             // 
             this.buttonAlugar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonAlugar.Location = new System.Drawing.Point(704, 505);
+            this.buttonAlugar.Location = new System.Drawing.Point(433, 689);
             this.buttonAlugar.Name = "buttonAlugar";
             this.buttonAlugar.Size = new System.Drawing.Size(75, 23);
             this.buttonAlugar.TabIndex = 9;
@@ -161,12 +158,52 @@
             this.label5.TabIndex = 11;
             this.label5.Text = "label5";
             // 
+            // dataGridViewJaAlugadoPeloCliente
+            // 
+            this.dataGridViewJaAlugadoPeloCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewJaAlugadoPeloCliente.Location = new System.Drawing.Point(581, 474);
+            this.dataGridViewJaAlugadoPeloCliente.Name = "dataGridViewJaAlugadoPeloCliente";
+            this.dataGridViewJaAlugadoPeloCliente.Size = new System.Drawing.Size(461, 195);
+            this.dataGridViewJaAlugadoPeloCliente.TabIndex = 12;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(577, 435);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(233, 20);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Itens alugados por esse cliente:";
+            // 
+            // dataGridViewListaCarrinho
+            // 
+            this.dataGridViewListaCarrinho.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewListaCarrinho.Location = new System.Drawing.Point(38, 474);
+            this.dataGridViewListaCarrinho.Name = "dataGridViewListaCarrinho";
+            this.dataGridViewListaCarrinho.Size = new System.Drawing.Size(470, 195);
+            this.dataGridViewListaCarrinho.TabIndex = 14;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(34, 435);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(104, 20);
+            this.label7.TabIndex = 15;
+            this.label7.Text = "Lista carrinho";
+            // 
             // TelaAlugarForm
             // 
             this.AcceptButton = this.buttonProcurar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(804, 540);
+            this.ClientSize = new System.Drawing.Size(1067, 724);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.dataGridViewListaCarrinho);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.dataGridViewJaAlugadoPeloCliente);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.buttonAlugar);
@@ -183,6 +220,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAlugar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.samplesDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewJaAlugadoPeloCliente)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListaCarrinho)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -198,9 +237,12 @@
         private System.Windows.Forms.TextBox textBoxTituloSearch;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button buttonProcurar;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn AlugarCol;
         private System.Windows.Forms.Button buttonAlugar;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DataGridView dataGridViewJaAlugadoPeloCliente;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DataGridView dataGridViewListaCarrinho;
+        private System.Windows.Forms.Label label7;
     }
 }

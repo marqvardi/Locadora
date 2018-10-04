@@ -40,6 +40,7 @@
             this.NomeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvEndereco = new System.Windows.Forms.DataGridView();
             this.enderecoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label1 = new System.Windows.Forms.Label();
             this.grpBoxPesquisaDeCliente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPesquisarCliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEndereco)).BeginInit();
@@ -149,9 +150,9 @@
             this.dgvEndereco.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvEndereco.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEndereco.Location = new System.Drawing.Point(12, 384);
+            this.dgvEndereco.Location = new System.Drawing.Point(12, 394);
             this.dgvEndereco.Name = "dgvEndereco";
-            this.dgvEndereco.Size = new System.Drawing.Size(1093, 185);
+            this.dgvEndereco.Size = new System.Drawing.Size(1093, 215);
             this.dgvEndereco.TabIndex = 13;
             this.dgvEndereco.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEndereco_CellValueChanged);
             // 
@@ -159,12 +160,22 @@
             // 
             this.enderecoBindingSource.DataSource = typeof(Locadora.DataAccess.Entidades.Endereco);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 375);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(110, 13);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Enderecos do cliente:";
+            // 
             // PesquisarClienteForm
             // 
             this.AcceptButton = this.btnPesquisarCliente;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1108, 554);
+            this.ClientSize = new System.Drawing.Size(1108, 616);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvEndereco);
             this.Controls.Add(this.dataGridViewPesquisarCliente);
             this.Controls.Add(this.grpBoxPesquisaDeCliente);
@@ -177,6 +188,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvEndereco)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.enderecoBindingSource)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -194,5 +206,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NomeCol;
         private System.Windows.Forms.DataGridView dgvEndereco;
         private System.Windows.Forms.BindingSource enderecoBindingSource;
+        private System.Windows.Forms.Label label1;
     }
 }

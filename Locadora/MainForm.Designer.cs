@@ -42,6 +42,9 @@
             this.administrativoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.alugarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.setPrecoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.parametrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cadastrarParametrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.caixaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -64,7 +67,8 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.clienteToolStripMenuItem1,
             this.midiaToolStripMenuItem,
-            this.administrativoToolStripMenuItem});
+            this.administrativoToolStripMenuItem,
+            this.parametrosToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(559, 24);
@@ -129,16 +133,39 @@
             // alugarToolStripMenuItem
             // 
             this.alugarToolStripMenuItem.Name = "alugarToolStripMenuItem";
-            this.alugarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.alugarToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
             this.alugarToolStripMenuItem.Text = "Alugar";
             this.alugarToolStripMenuItem.Click += new System.EventHandler(this.alugarToolStripMenuItem_Click);
             // 
             // setPrecoToolStripMenuItem
             // 
             this.setPrecoToolStripMenuItem.Name = "setPrecoToolStripMenuItem";
-            this.setPrecoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.setPrecoToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
             this.setPrecoToolStripMenuItem.Text = "Set Preco";
             this.setPrecoToolStripMenuItem.Click += new System.EventHandler(this.setPrecoToolStripMenuItem_Click);
+            // 
+            // parametrosToolStripMenuItem
+            // 
+            this.parametrosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cadastrarParametrosToolStripMenuItem,
+            this.caixaToolStripMenuItem});
+            this.parametrosToolStripMenuItem.Name = "parametrosToolStripMenuItem";
+            this.parametrosToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
+            this.parametrosToolStripMenuItem.Text = "Parametros";
+            // 
+            // cadastrarParametrosToolStripMenuItem
+            // 
+            this.cadastrarParametrosToolStripMenuItem.Name = "cadastrarParametrosToolStripMenuItem";
+            this.cadastrarParametrosToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
+            this.cadastrarParametrosToolStripMenuItem.Text = "Cadastrar parametros";
+            this.cadastrarParametrosToolStripMenuItem.Click += new System.EventHandler(this.cadastrarParametrosToolStripMenuItem_Click);
+            // 
+            // caixaToolStripMenuItem
+            // 
+            this.caixaToolStripMenuItem.Name = "caixaToolStripMenuItem";
+            this.caixaToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
+            this.caixaToolStripMenuItem.Text = "Caixa";
+            this.caixaToolStripMenuItem.Click += new System.EventHandler(this.caixaToolStripMenuItem_Click);
             // 
             // Formulario
             // 
@@ -177,6 +204,9 @@
         private System.Windows.Forms.ToolStripMenuItem administrativoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem alugarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem setPrecoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem parametrosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cadastrarParametrosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem caixaToolStripMenuItem;
     }
 }
 

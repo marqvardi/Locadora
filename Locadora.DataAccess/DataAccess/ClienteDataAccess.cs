@@ -84,10 +84,7 @@ namespace Locadora.DataAccess.DataAccess
             //grdPessoas.DataSource = dtPessoas;       
 
             //comandoconsulta.ExecuteNonQuery(); Nao e' necessario pois Select is Query
-        }
-       
-        private int id;
-        private string nome;
+        }      
 
         public List<Cliente> AlugarPorId(int id)
         {
@@ -129,9 +126,7 @@ namespace Locadora.DataAccess.DataAccess
             conexao.Execute("update [Cliente] set Nome = @nome, Datanascimento = @datanascimento, ativo = @ativo where id = @id", cliente);
             DesconectarSQL();
         }
-
-
-
+        
         public void DeletarSQL(int id)
         {
             ConectarSQL();

@@ -28,7 +28,12 @@ namespace Locadora.DataAccess.DataAccess
             DesconectarSQL();
 
             return resultados;
-        }      
+        }
+        
+        public void PuxarItensAlugados(int id)
+        {
+
+        }
 
         //public IEnumerable<Midia> PesquisarPorCategoria(int categoria)
         //{
