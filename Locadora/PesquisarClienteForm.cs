@@ -74,7 +74,6 @@ namespace Locadora
             cn.UpdateSQLEndereco(enderecoCorrente);
         }
 
-
         int rowIndex = 0;
 
         private void dataGridViewPesquisarCliente_CellClick(object sender, DataGridViewCellEventArgs e)

@@ -38,6 +38,10 @@ namespace Locadora
             }
             else
             {
+                if (txtBoxPesquisarCliente.Text == "" || txtBoxPesquisarCliente.Text == null)
+                {
+                    return;
+                }
                 //Tratamento para quando nao insere nada ou nao encontrado
                 dataGridViewAlugar.DataSource = cn.PesquisarPorId(Convert.ToInt32(txtBoxPesquisarCliente.Text));
                 txtBoxPesquisarCliente.Clear();

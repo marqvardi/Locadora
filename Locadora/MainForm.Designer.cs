@@ -41,7 +41,6 @@
             this.procurarProdutoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.administrativoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.alugarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.setPrecoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.parametrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastrarParametrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.caixaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -124,8 +123,7 @@
             // administrativoToolStripMenuItem
             // 
             this.administrativoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.alugarToolStripMenuItem,
-            this.setPrecoToolStripMenuItem});
+            this.alugarToolStripMenuItem});
             this.administrativoToolStripMenuItem.Name = "administrativoToolStripMenuItem";
             this.administrativoToolStripMenuItem.Size = new System.Drawing.Size(97, 20);
             this.administrativoToolStripMenuItem.Text = "Administrativo";
@@ -133,16 +131,9 @@
             // alugarToolStripMenuItem
             // 
             this.alugarToolStripMenuItem.Name = "alugarToolStripMenuItem";
-            this.alugarToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            this.alugarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.alugarToolStripMenuItem.Text = "Alugar";
             this.alugarToolStripMenuItem.Click += new System.EventHandler(this.alugarToolStripMenuItem_Click);
-            // 
-            // setPrecoToolStripMenuItem
-            // 
-            this.setPrecoToolStripMenuItem.Name = "setPrecoToolStripMenuItem";
-            this.setPrecoToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
-            this.setPrecoToolStripMenuItem.Text = "Set Preco";
-            this.setPrecoToolStripMenuItem.Click += new System.EventHandler(this.setPrecoToolStripMenuItem_Click);
             // 
             // parametrosToolStripMenuItem
             // 
@@ -203,7 +194,6 @@
         private System.Windows.Forms.ToolStripMenuItem procurarProdutoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem administrativoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem alugarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem setPrecoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem parametrosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cadastrarParametrosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem caixaToolStripMenuItem;

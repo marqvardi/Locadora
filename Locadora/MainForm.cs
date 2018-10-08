@@ -17,8 +17,8 @@ namespace Locadora
         public Formulario()
         {
             InitializeComponent();           
-        }        
-        
+        }     
+                
         private NovoClienteForm _novoClienteForm;
         private PesquisarClienteForm _pesquisarClienteForm;       
         private MidiaCadastroForm _midiaDVDForm;
@@ -44,9 +44,7 @@ namespace Locadora
                 _novoClienteForm.Focus();
             }
                     
-        }
-
-        
+        }               
         
         private void procurarClientesToolStripMenuItem_Click(object sender, EventArgs e)
         {

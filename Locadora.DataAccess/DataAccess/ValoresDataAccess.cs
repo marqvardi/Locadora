@@ -13,15 +13,35 @@ namespace Locadora.DataAccess.DataAccess
 {
     public class ValoresDataAccess : DataAccessBase
     {
-        public int PuxarValorAluguel(int id)
+        public void PuxarValorAluguel(Valores va)
         {
-            ConectarSQL();            
-            int resultado = Convert.ToInt32(conexao.Query("Select ValorAluguel from Valores where id = @id"));            
+            ConectarSQL();
+           // int resultado = conexao.Query<int>("Select ValorAluguel from Valores where id = @id", va);
             DesconectarSQL();
+        }
 
-            return resultado;
-            
-        }      
+        //public int PuxarValorAluguel(int id)
+        //{
+        //    ConectarSQL();
+        //    int resultado = Convert.ToInt32(conexao.Query<int>("Select ValorAluguel from Valores where id = @id"));
+        //    DesconectarSQL();
+
+        //    return resultado;
+        //}
+
+        public string  PuxarValorAluguel()
+        {
+            Valores va;
+            int id = 1;
+            ConectarSQL();
+            va = conexao.QuerySingle<Valores>("Select ValorAluguel from Valores where Id = @id", new { id });
+            //decimal resultado = conexao.Query<Valores>("Select ValorAluguel * from Valores where id = @id");
+            string vb = Convert.ToString(va);
+            return vb;
+            DesconectarSQL();
+           
+        }
+
 
         public void ValorAluguelMultaNovo(Valores va)
         {

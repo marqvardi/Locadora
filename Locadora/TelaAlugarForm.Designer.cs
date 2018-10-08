@@ -45,6 +45,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.dataGridViewListaCarrinho = new System.Windows.Forms.DataGridView();
             this.label7 = new System.Windows.Forms.Label();
+            this.buttonAdicionarCarrinho = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAlugar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.samplesDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
@@ -57,6 +58,8 @@
             this.dataGridViewAlugar.AllowUserToAddRows = false;
             this.dataGridViewAlugar.AllowUserToDeleteRows = false;
             this.dataGridViewAlugar.AllowUserToOrderColumns = true;
+            this.dataGridViewAlugar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewAlugar.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridViewAlugar.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenHorizontal;
             this.dataGridViewAlugar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -65,8 +68,9 @@
             this.dataGridViewAlugar.Name = "dataGridViewAlugar";
             this.dataGridViewAlugar.ReadOnly = true;
             this.dataGridViewAlugar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewAlugar.Size = new System.Drawing.Size(1007, 262);
+            this.dataGridViewAlugar.Size = new System.Drawing.Size(972, 262);
             this.dataGridViewAlugar.TabIndex = 2;
+            this.dataGridViewAlugar.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewAlugar_CellClick);
             // 
             // samplesDataSet1
             // 
@@ -106,7 +110,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxTituloSearch.Location = new System.Drawing.Point(172, 69);
             this.textBoxTituloSearch.Name = "textBoxTituloSearch";
-            this.textBoxTituloSearch.Size = new System.Drawing.Size(861, 20);
+            this.textBoxTituloSearch.Size = new System.Drawing.Size(838, 20);
             this.textBoxTituloSearch.TabIndex = 6;
             // 
             // label3
@@ -121,7 +125,7 @@
             // buttonProcurar
             // 
             this.buttonProcurar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonProcurar.Location = new System.Drawing.Point(955, 104);
+            this.buttonProcurar.Location = new System.Drawing.Point(932, 104);
             this.buttonProcurar.Name = "buttonProcurar";
             this.buttonProcurar.Size = new System.Drawing.Size(79, 23);
             this.buttonProcurar.TabIndex = 8;
@@ -131,8 +135,8 @@
             // 
             // buttonAlugar
             // 
-            this.buttonAlugar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonAlugar.Location = new System.Drawing.Point(433, 689);
+            this.buttonAlugar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.buttonAlugar.Location = new System.Drawing.Point(437, 698);
             this.buttonAlugar.Name = "buttonAlugar";
             this.buttonAlugar.Size = new System.Drawing.Size(75, 23);
             this.buttonAlugar.TabIndex = 9;
@@ -160,10 +164,13 @@
             // 
             // dataGridViewJaAlugadoPeloCliente
             // 
+            this.dataGridViewJaAlugadoPeloCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewJaAlugadoPeloCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewJaAlugadoPeloCliente.Location = new System.Drawing.Point(581, 474);
+            this.dataGridViewJaAlugadoPeloCliente.Location = new System.Drawing.Point(549, 474);
             this.dataGridViewJaAlugadoPeloCliente.Name = "dataGridViewJaAlugadoPeloCliente";
-            this.dataGridViewJaAlugadoPeloCliente.Size = new System.Drawing.Size(461, 195);
+            this.dataGridViewJaAlugadoPeloCliente.Size = new System.Drawing.Size(461, 204);
             this.dataGridViewJaAlugadoPeloCliente.TabIndex = 12;
             // 
             // label6
@@ -178,10 +185,16 @@
             // 
             // dataGridViewListaCarrinho
             // 
+            this.dataGridViewListaCarrinho.AllowUserToAddRows = false;
+            this.dataGridViewListaCarrinho.AllowUserToDeleteRows = false;
+            this.dataGridViewListaCarrinho.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewListaCarrinho.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewListaCarrinho.Location = new System.Drawing.Point(38, 474);
             this.dataGridViewListaCarrinho.Name = "dataGridViewListaCarrinho";
-            this.dataGridViewListaCarrinho.Size = new System.Drawing.Size(470, 195);
+            this.dataGridViewListaCarrinho.ReadOnly = true;
+            this.dataGridViewListaCarrinho.Size = new System.Drawing.Size(474, 204);
             this.dataGridViewListaCarrinho.TabIndex = 14;
             // 
             // label7
@@ -194,12 +207,25 @@
             this.label7.TabIndex = 15;
             this.label7.Text = "Lista carrinho";
             // 
+            // buttonAdicionarCarrinho
+            // 
+            this.buttonAdicionarCarrinho.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonAdicionarCarrinho.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.buttonAdicionarCarrinho.Location = new System.Drawing.Point(881, 432);
+            this.buttonAdicionarCarrinho.Name = "buttonAdicionarCarrinho";
+            this.buttonAdicionarCarrinho.Size = new System.Drawing.Size(128, 23);
+            this.buttonAdicionarCarrinho.TabIndex = 16;
+            this.buttonAdicionarCarrinho.Text = "Adicionar no carrinho";
+            this.buttonAdicionarCarrinho.UseVisualStyleBackColor = false;
+            this.buttonAdicionarCarrinho.Click += new System.EventHandler(this.buttonAdicionarCarrinho_Click);
+            // 
             // TelaAlugarForm
             // 
             this.AcceptButton = this.buttonProcurar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 724);
+            this.ClientSize = new System.Drawing.Size(1044, 733);
+            this.Controls.Add(this.buttonAdicionarCarrinho);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.dataGridViewListaCarrinho);
             this.Controls.Add(this.label6);
@@ -244,5 +270,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataGridView dataGridViewListaCarrinho;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button buttonAdicionarCarrinho;
     }
 }

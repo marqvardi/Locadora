@@ -15,10 +15,15 @@ namespace Locadora
     public partial class ValoresForm : Form
     {
         ValoresDataAccess va = new ValoresDataAccess();
+        Valores v = new Valores();
 
         public ValoresForm()
         {
             InitializeComponent();
+            textBoxValorAluguel.Focus(); //Nao funciona :( 
+            v.Id = 1;
+            va.PuxarValorAluguel(v);
+            
             //int valor = va.PuxarValorAluguel(1);       
            
             //labelValueAtualAluguel.Text = Convert.ToString(valor);                      
@@ -42,9 +47,8 @@ namespace Locadora
             va.ValorAluguelMultaNovo(vl);
           
             MessageBox.Show("Mensagem incluida", "Okey baby", MessageBoxButtons.OK);
-            Limpartxtbox();
-            
-            
+            Limpartxtbox();           
         }
+
     }
 }

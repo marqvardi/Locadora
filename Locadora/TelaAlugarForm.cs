@@ -17,8 +17,7 @@ namespace Locadora
     {
         private int _id;
         private string _nome;
-
-        List<Midia> resultados = new List<Midia>();
+               
 
         //public TelaAlugarForm()
         //{
@@ -29,7 +28,7 @@ namespace Locadora
         {
             InitializeComponent();
             _id = id;
-            _nome = nome;
+            _nome = nome;           
         }
 
         public void PuxarNome()
@@ -54,18 +53,57 @@ namespace Locadora
 
             if (result == DialogResult.No) return;
 
-            for (int i = 0; i < dataGridViewAlugar.Rows.Count; i++)
-            {
-                bool isChecked = (bool)dataGridViewAlugar.Rows[i].Cells[0].Value;
-                if (isChecked == true)
-                {
-                    
-                }
-            }
-
-            MessageBox.Show("Titulo's' adicinado's' com sucesso.");
+            ConfirmacaoAluguelForm cf = new ConfirmacaoAluguelForm(_id, Carrinho);
+            cf.Show();
             this.Close();
-        }        
+        }              
+
+        int rowIndex = 0;
+
+        private void dataGridViewAlugar_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            rowIndex = e.RowIndex;
+        }
+
+        List<int> Carrinho = new List<int>(); 
+        DataTable dt = new DataTable();
+
+        private void buttonAdicionarCarrinho_Click(object sender, EventArgs e)
+        {
+            if (rowIndex < 0) return;
+            DataGridViewRow LinhaSelecionada = dataGridViewAlugar.Rows[rowIndex];
+            int checarQuantidadeEstoque = Convert.ToInt32(LinhaSelecionada.Cells[4].FormattedValue.ToString());
+
+            if (checarQuantidadeEstoque <= 0)
+            {
+                MessageBox.Show("Estoque nao disponivel", "Alerta", MessageBoxButtons.OK);
+                return;
+            }
+            else
+            {
+                int idMidia = Convert.ToInt16(LinhaSelecionada.Cells[0].FormattedValue.ToString());
+                string NomeFilme = (LinhaSelecionada.Cells[1].FormattedValue.ToString());
+
+                if (dt.Columns.Count <= 0)
+                {
+                    dt.Columns.Add("IdMidia");
+                    dt.Columns.Add("Nome do Filme");
+                }
+                
+                if (Carrinho.Contains(idMidia))
+                {
+                    MessageBox.Show("Item ja adicionado", "Alerta", MessageBoxButtons.OK);
+                    return;
+                }
+                
+                dt.Rows.Add(idMidia, NomeFilme);
+                
+                Carrinho.Add(idMidia);                
+                            
+                dataGridViewListaCarrinho.DataSource = dt;
+            }
+        }
+       
     }
 }
 
