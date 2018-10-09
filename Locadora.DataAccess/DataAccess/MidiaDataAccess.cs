@@ -30,11 +30,6 @@ namespace Locadora.DataAccess.DataAccess
             return resultados;
         }
         
-        public void PuxarItensAlugados(int id)
-        {
-
-        }
-
         //public IEnumerable<Midia> PesquisarPorCategoria(int categoria)
         //{
         //    ConectarSQL();

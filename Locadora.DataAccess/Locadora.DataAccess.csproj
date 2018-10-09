@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataAccess\AlugarDataAccess.cs" />
     <Compile Include="DataAccess\ClienteDataAccess.cs" />
     <Compile Include="DataAccess\DataAccessBase.cs" />
     <Compile Include="DataAccess\MidiaDataAccess.cs" />

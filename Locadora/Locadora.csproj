@@ -59,11 +59,11 @@
     <Compile Include="CaixaForm.Designer.cs">
       <DependentUpon>CaixaForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ConfirmacaoAluguelForm.cs">
+    <Compile Include="ConfirmacaoAlugarForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ConfirmacaoAluguelForm.Designer.cs">
-      <DependentUpon>ConfirmacaoAluguelForm.cs</DependentUpon>
+    <Compile Include="ConfirmacaoAlugarForm.Designer.cs">
+      <DependentUpon>ConfirmacaoAlugarForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -136,8 +136,8 @@
     <EmbeddedResource Include="CaixaForm.resx">
       <DependentUpon>CaixaForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ConfirmacaoAluguelForm.resx">
-      <DependentUpon>ConfirmacaoAluguelForm.cs</DependentUpon>
+    <EmbeddedResource Include="ConfirmacaoAlugarForm.resx">
+      <DependentUpon>ConfirmacaoAlugarForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

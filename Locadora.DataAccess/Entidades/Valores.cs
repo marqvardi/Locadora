@@ -11,5 +11,6 @@ namespace Locadora.DataAccess.Entidades
         public Decimal ValorAluguel { get; set; }
         public int Id { get; set; }
         public Decimal ValorMulta { get; set; }
+        public Decimal ValorDesconto { get; set; }
     }
 }

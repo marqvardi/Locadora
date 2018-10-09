@@ -13,40 +13,34 @@ namespace Locadora.DataAccess.DataAccess
 {
     public class ValoresDataAccess : DataAccessBase
     {
-        public void PuxarValorAluguel(Valores va)
+        public decimal PuxarValorAluguel(int id)
         {
             ConectarSQL();
-           // int resultado = conexao.Query<int>("Select ValorAluguel from Valores where id = @id", va);
+            Decimal resultado = conexao.ExecuteScalar<int>("SELECT ValorAluguel FROM Valores");
             DesconectarSQL();
+            return resultado;
         }
 
-        //public int PuxarValorAluguel(int id)
-        //{
-        //    ConectarSQL();
-        //    int resultado = Convert.ToInt32(conexao.Query<int>("Select ValorAluguel from Valores where id = @id"));
-        //    DesconectarSQL();
-
-        //    return resultado;
-        //}
-
-        public string  PuxarValorAluguel()
+        public decimal PuxarValorMulta(int id)
         {
-            Valores va;
-            int id = 1;
             ConectarSQL();
-            va = conexao.QuerySingle<Valores>("Select ValorAluguel from Valores where Id = @id", new { id });
-            //decimal resultado = conexao.Query<Valores>("Select ValorAluguel * from Valores where id = @id");
-            string vb = Convert.ToString(va);
-            return vb;
+            Decimal resultado = conexao.ExecuteScalar<int>("SELECT ValorMulta FROM Valores");
             DesconectarSQL();
-           
+            return resultado;
         }
 
+        public decimal PuxarValorDesconto(int id)
+        {
+            ConectarSQL();
+            Decimal resultado = conexao.ExecuteScalar<int>("SELECT ValorDesconto FROM Valores");
+            DesconectarSQL();
+            return resultado;
+        }
 
         public void ValorAluguelMultaNovo(Valores va)
         {
             ConectarSQL();
-            conexao.Execute("update Valores set ValorAluguel = @valoraluguel, valormulta = @ValorMulta where id = @id", va);
+            conexao.Execute("update Valores set ValorAluguel = @valoraluguel, valormulta = @ValorMulta, valorDesconto = @ValorDesconto where id = @id", va);
             DesconectarSQL();
         }
     }

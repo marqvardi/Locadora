@@ -16,8 +16,7 @@ namespace Locadora
     public partial class TelaAlugarForm : Form
     {
         private int _id;
-        private string _nome;
-               
+        private string _nome;               
 
         //public TelaAlugarForm()
         //{
@@ -53,8 +52,9 @@ namespace Locadora
 
             if (result == DialogResult.No) return;
 
-            ConfirmacaoAluguelForm cf = new ConfirmacaoAluguelForm(_id, Carrinho);
+            ConfirmacaoAlugarForm cf = new ConfirmacaoAlugarForm(_id, Carrinho);
             cf.Show();
+
             this.Close();
         }              
 

@@ -46,11 +46,14 @@
             this.dataGridViewListaCarrinho = new System.Windows.Forms.DataGridView();
             this.label7 = new System.Windows.Forms.Label();
             this.buttonAdicionarCarrinho = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAlugar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.samplesDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewJaAlugadoPeloCliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListaCarrinho)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridViewAlugar
@@ -136,7 +139,7 @@
             // buttonAlugar
             // 
             this.buttonAlugar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.buttonAlugar.Location = new System.Drawing.Point(437, 698);
+            this.buttonAlugar.Location = new System.Drawing.Point(437, 751);
             this.buttonAlugar.Name = "buttonAlugar";
             this.buttonAlugar.Size = new System.Drawing.Size(75, 23);
             this.buttonAlugar.TabIndex = 9;
@@ -170,14 +173,14 @@
             this.dataGridViewJaAlugadoPeloCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewJaAlugadoPeloCliente.Location = new System.Drawing.Point(549, 474);
             this.dataGridViewJaAlugadoPeloCliente.Name = "dataGridViewJaAlugadoPeloCliente";
-            this.dataGridViewJaAlugadoPeloCliente.Size = new System.Drawing.Size(461, 204);
+            this.dataGridViewJaAlugadoPeloCliente.Size = new System.Drawing.Size(461, 116);
             this.dataGridViewJaAlugadoPeloCliente.TabIndex = 12;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(577, 435);
+            this.label6.Location = new System.Drawing.Point(545, 451);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(233, 20);
             this.label6.TabIndex = 13;
@@ -194,14 +197,14 @@
             this.dataGridViewListaCarrinho.Location = new System.Drawing.Point(38, 474);
             this.dataGridViewListaCarrinho.Name = "dataGridViewListaCarrinho";
             this.dataGridViewListaCarrinho.ReadOnly = true;
-            this.dataGridViewListaCarrinho.Size = new System.Drawing.Size(474, 204);
+            this.dataGridViewListaCarrinho.Size = new System.Drawing.Size(474, 257);
             this.dataGridViewListaCarrinho.TabIndex = 14;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(34, 435);
+            this.label7.Location = new System.Drawing.Point(34, 451);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(104, 20);
             this.label7.TabIndex = 15;
@@ -219,12 +222,32 @@
             this.buttonAdicionarCarrinho.UseVisualStyleBackColor = false;
             this.buttonAdicionarCarrinho.Click += new System.EventHandler(this.buttonAdicionarCarrinho_Click);
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(545, 605);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(220, 20);
+            this.label8.TabIndex = 17;
+            this.label8.Text = "Itens pendentes para entrega";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(549, 628);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(460, 103);
+            this.dataGridView1.TabIndex = 18;
+            // 
             // TelaAlugarForm
             // 
             this.AcceptButton = this.buttonProcurar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1044, 733);
+            this.ClientSize = new System.Drawing.Size(1044, 786);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.buttonAdicionarCarrinho);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.dataGridViewListaCarrinho);
@@ -248,6 +271,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewJaAlugadoPeloCliente)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListaCarrinho)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -271,5 +295,7 @@
         private System.Windows.Forms.DataGridView dataGridViewListaCarrinho;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button buttonAdicionarCarrinho;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

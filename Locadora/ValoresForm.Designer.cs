@@ -39,8 +39,14 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.labelValorMultaAtual = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.textBoxValorDesconto = new System.Windows.Forms.TextBox();
+            this.labelValorDesconto = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.labelDescontoAtual = new System.Windows.Forms.Label();
             this.groupBoxValorAluguel.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelValorAluguel
@@ -77,7 +83,7 @@
             // 
             // buttonSalvar
             // 
-            this.buttonSalvar.Location = new System.Drawing.Point(300, 237);
+            this.buttonSalvar.Location = new System.Drawing.Point(300, 370);
             this.buttonSalvar.Name = "buttonSalvar";
             this.buttonSalvar.Size = new System.Drawing.Size(75, 23);
             this.buttonSalvar.TabIndex = 4;
@@ -141,18 +147,66 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(20, 29);
+            this.label2.Location = new System.Drawing.Point(17, 29);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(59, 13);
             this.label2.TabIndex = 4;
             this.label2.Text = "Multa atual";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.textBoxValorDesconto);
+            this.groupBox2.Controls.Add(this.labelValorDesconto);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.labelDescontoAtual);
+            this.groupBox2.Location = new System.Drawing.Point(12, 250);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(363, 100);
+            this.groupBox2.TabIndex = 9;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Desconto";
+            // 
+            // textBoxValorDesconto
+            // 
+            this.textBoxValorDesconto.Location = new System.Drawing.Point(148, 64);
+            this.textBoxValorDesconto.Name = "textBoxValorDesconto";
+            this.textBoxValorDesconto.Size = new System.Drawing.Size(100, 20);
+            this.textBoxValorDesconto.TabIndex = 3;
+            // 
+            // labelValorDesconto
+            // 
+            this.labelValorDesconto.AutoSize = true;
+            this.labelValorDesconto.Location = new System.Drawing.Point(148, 30);
+            this.labelValorDesconto.Name = "labelValorDesconto";
+            this.labelValorDesconto.Size = new System.Drawing.Size(35, 13);
+            this.labelValorDesconto.TabIndex = 2;
+            this.labelValorDesconto.Text = "label5";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(20, 67);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(93, 13);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Valor do desconto";
+            // 
+            // labelDescontoAtual
+            // 
+            this.labelDescontoAtual.AutoSize = true;
+            this.labelDescontoAtual.Location = new System.Drawing.Point(17, 30);
+            this.labelDescontoAtual.Name = "labelDescontoAtual";
+            this.labelDescontoAtual.Size = new System.Drawing.Size(80, 13);
+            this.labelDescontoAtual.TabIndex = 0;
+            this.labelDescontoAtual.Text = "Desconto Atual";
             // 
             // ValoresForm
             // 
             this.AcceptButton = this.buttonSalvar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(387, 283);
+            this.ClientSize = new System.Drawing.Size(387, 405);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.buttonSalvar);
             this.Controls.Add(this.groupBoxValorAluguel);
             this.Controls.Add(this.groupBox1);
@@ -164,6 +218,8 @@
             this.groupBoxValorAluguel.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -181,5 +237,10 @@
         private System.Windows.Forms.Label labelValorMultaAtual;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label labelValueAtualAluguel;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.TextBox textBoxValorDesconto;
+        private System.Windows.Forms.Label labelValorDesconto;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label labelDescontoAtual;
     }
 }
