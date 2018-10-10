@@ -39,7 +39,10 @@
             this.label9 = new System.Windows.Forms.Label();
             this.labelValorTotal = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dgvConfirmar = new System.Windows.Forms.DataGridView();
+            this.buttonConfirmar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvConfirmar)).BeginInit();
             this.SuspendLayout();
             // 
             // label
@@ -151,11 +154,34 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Detalhes:";
             // 
+            // dgvConfirmar
+            // 
+            this.dgvConfirmar.AllowUserToAddRows = false;
+            this.dgvConfirmar.AllowUserToDeleteRows = false;
+            this.dgvConfirmar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvConfirmar.Location = new System.Drawing.Point(12, 253);
+            this.dgvConfirmar.Name = "dgvConfirmar";
+            this.dgvConfirmar.ReadOnly = true;
+            this.dgvConfirmar.Size = new System.Drawing.Size(753, 150);
+            this.dgvConfirmar.TabIndex = 11;
+            // 
+            // buttonConfirmar
+            // 
+            this.buttonConfirmar.Location = new System.Drawing.Point(690, 415);
+            this.buttonConfirmar.Name = "buttonConfirmar";
+            this.buttonConfirmar.Size = new System.Drawing.Size(75, 23);
+            this.buttonConfirmar.TabIndex = 12;
+            this.buttonConfirmar.Text = "Confirmar";
+            this.buttonConfirmar.UseVisualStyleBackColor = true;
+            this.buttonConfirmar.Click += new System.EventHandler(this.buttonConfirmar_Click);
+            // 
             // ConfirmacaoAlugarForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(773, 450);
+            this.Controls.Add(this.buttonConfirmar);
+            this.Controls.Add(this.dgvConfirmar);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "ConfirmacaoAlugarForm";
@@ -163,6 +189,7 @@
             this.Text = "Confirmacao de aluguel";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvConfirmar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -180,5 +207,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label labelValorTotal;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.DataGridView dgvConfirmar;
+        private System.Windows.Forms.Button buttonConfirmar;
     }
 }

@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[Aluguel]
 (
-	[Id] INT NOT NULL PRIMARY KEY, 
+	[Id] INT NOT NULL PRIMARY KEY identity, 
     [Id_cliente] INT NOT NULL, 
     [DataHora] DATETIME NOT NULL, 
     [ValorSubTotal] MONEY NOT NULL, 

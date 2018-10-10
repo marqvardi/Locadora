@@ -52,7 +52,7 @@ namespace Locadora
 
             if (result == DialogResult.No) return;
 
-            ConfirmacaoAlugarForm cf = new ConfirmacaoAlugarForm(_id, Carrinho);
+            ConfirmacaoAlugarForm cf = new ConfirmacaoAlugarForm(_id, CarrinhoId_Midia, CarrinhoNomeFilme);
             cf.Show();
 
             this.Close();
@@ -65,7 +65,9 @@ namespace Locadora
             rowIndex = e.RowIndex;
         }
 
-        List<int> Carrinho = new List<int>(); 
+        List<int> CarrinhoId_Midia = new List<int>();
+        List<string> CarrinhoNomeFilme = new List<string>();
+
         DataTable dt = new DataTable();
 
         private void buttonAdicionarCarrinho_Click(object sender, EventArgs e)
@@ -90,15 +92,16 @@ namespace Locadora
                     dt.Columns.Add("Nome do Filme");
                 }
                 
-                if (Carrinho.Contains(idMidia))
+                if (CarrinhoId_Midia.Contains(idMidia))
                 {
                     MessageBox.Show("Item ja adicionado", "Alerta", MessageBoxButtons.OK);
                     return;
                 }
                 
                 dt.Rows.Add(idMidia, NomeFilme);
-                
-                Carrinho.Add(idMidia);                
+
+                CarrinhoId_Midia.Add(idMidia);
+                CarrinhoNomeFilme.Add(NomeFilme);
                             
                 dataGridViewListaCarrinho.DataSource = dt;
             }

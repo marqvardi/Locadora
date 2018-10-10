@@ -8,6 +8,7 @@ namespace Locadora.DataAccess.Entidades
         /// <summary>
         ///  O meu comentario eh melhor
         /// </summary>
+        public int Id_cliente { get; set; }
         public DateTime DataHora { get; set; }
         public decimal ValorSubTotal { get; set; }
         public decimal ValorDesconto { get; set; }
