@@ -118,12 +118,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SamplesDataSet1.xsd</DependentUpon>
     </Compile>
-    <Compile Include="SetPrecoForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SetPrecoForm.Designer.cs">
-      <DependentUpon>SetPrecoForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="TelaAlugarForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,9 +160,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="SetPrecoForm.resx">
-      <DependentUpon>SetPrecoForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="TelaAlugarForm.resx">
       <DependentUpon>TelaAlugarForm.cs</DependentUpon>
     </EmbeddedResource>

@@ -24,7 +24,6 @@ namespace Locadora
         private MidiaCadastroForm _midiaDVDForm;
         private ProcurarProdutoForm _procurarProdutoForm;
         private AlugarForm _alugarForm;
-        private SetPrecoForm _setPrecoForm;
         private ValoresForm _parametrosForm;
         private CaixaForm _caixaForm;
         
@@ -115,23 +114,7 @@ namespace Locadora
                 _alugarForm.Focus();
 
             }
-        }        
-
-        private void setPrecoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (_setPrecoForm == null || _setPrecoForm.IsDisposed)
-            {
-                _setPrecoForm = new SetPrecoForm
-                {
-                    MdiParent = this
-                };
-                _setPrecoForm.Show();
-            }
-            else
-            {
-                _setPrecoForm.Focus();
-            }
-        }
+        }     
 
         private void cadastrarParametrosToolStripMenuItem_Click(object sender, EventArgs e)
         {

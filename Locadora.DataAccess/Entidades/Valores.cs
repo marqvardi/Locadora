@@ -8,9 +8,9 @@ namespace Locadora.DataAccess.Entidades
 {
     public class Valores
     {
-        public Decimal ValorAluguel { get; set; }
+        public decimal ValorAluguel { get; set; }
         public int Id { get; set; }
-        public Decimal ValorMulta { get; set; }
-        public Decimal ValorDesconto { get; set; }
+        public decimal ValorMulta { get; set; }
+        public decimal ValorDesconto { get; set; }
     }
 }

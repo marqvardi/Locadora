@@ -2,10 +2,20 @@
 {
     public class ItemAluguel
     {
-        //public int Id { get; set; } //Eu que criei, nao tinha
+        public int Quantidade { get; private set; }
+        public Midia Midia { get; private set; }
 
-        public Midia Midia { get; set; }
+        public ItemAluguel(Midia midia, int quantidade = 1)
+        {
+            Midia = midia;
+            Quantidade = quantidade;
+        }           
 
-        public int Quantidade { get; set; }
+        public string NomeMidia {
+            get
+            {
+                return Midia.Titulo;
+            }
+        }        
     }
 }

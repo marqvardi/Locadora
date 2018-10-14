@@ -103,21 +103,5 @@ namespace Locadora
             
             dataGridViewPesquisarCliente.DataSource = cn.PesquisarPorNome("");
         }
-
-       
-        //private void dataGridViewPesquisarCliente_DoubleClick(object sender, EventArgs e)
-        //{
-        //    DataGridViewRow LinhaSelecionada = dataGridViewPesquisarCliente.Rows[rowIndex];
-        //    int id = Convert.ToInt32(LinhaSelecionada.Cells[0].FormattedValue);
-        //    string nome = (LinhaSelecionada.Cells[1].FormattedValue).ToString();
-
-        //    TelaAlugarForm tl = new TelaAlugarForm(id, nome);
-        //    tl.Show();
-        //    //Como fazer para o formulario de pesquisar cliente fique inacessivel?
-
-        //    tl.PuxarNome1();
-
-
-        //}
     }
 }

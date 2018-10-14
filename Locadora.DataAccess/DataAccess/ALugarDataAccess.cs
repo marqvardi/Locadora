@@ -1,45 +1,47 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Dapper;
+﻿using Dapper;
 using Locadora.DataAccess.Entidades;
+using System;
+using System.Linq;
 
 namespace Locadora.DataAccess.DataAccess
 {
     public class AlugarDataAccess: DataAccessBase
     {
-        public void InserirAluguel(Aluguel al, List<int> carrinho)
+        public void InserirAluguel(Aluguel al)
         {
-            //Colocar o TransactSQL
-            ItemAluguel ia = new ItemAluguel();
-
-            int id = conexao.Query<int>("insert into Aluguel (Id_Cliente, DataHora, ValorSubTotal, ValorDesconto, ValorTotal, ValorMulta, Pago, DataEntrega, DataPrevisaoEntrega, Status) output inserted.Id values (@d_Cliente, @DataHora, @ValorSubTotal, @ValorDesconto, @ValorTotal, @ValorMulta, @Pago, @DataEntrega, @DataPrevisaoEntrega, @Status)", al).Single();
+            al.DataHora = DateTime.Now;
+            ConectarSQL();
+            int id = conexao.Query<int>(@"INSERT INTO aluguel 
+                                                        (id_cliente, 
+                                                         valorsubtotal, 
+                                                         dataHora,
+                                                         valordesconto,  
+                                                         valormulta, 
+                                                         pago, 
+                                                         dataentrega, 
+                                                         dataprevisaoentrega) 
+                                            output      inserted.id 
+                                            VALUES      ( @IdCliente, 
+                                                          @ValorSubTotal, 
+                                                          @dataHora,
+                                                          @ValorDesconto, 
+                                                          @ValorMulta, 
+                                                          @Pago, 
+                                                          @DataEntrega, 
+                                                          @DataPrevisaoEntrega) ", al).Single();
             
-            foreach (var item in carrinho) //1001 . 1002. 1003
+            foreach (var item in al.Items)  
             {
-                Midia md = new Midia();
-                
-                ia.Quantidade = 1;
-                
-                
-                md.Id = item; // Id_Midia no banco de dados
-
-                conexao.Execute("insert into ItemAluguel (Id_Aluguel, Id_Midia, Quantidade) values (@ia.ID, @md.Id, ia.Quantidade)");
-
-                // int pegarquantidade = select quantidade where Midia_id = item 
-                // int novaquantidade -= pegarquantidade;
-                // insert novaquantidade where Midia_id = id
-
-                    //UPDATE table
-                    //SET field = GREATEST(0, field - 1)
-                    //WHERE id = $number  
-               
-                string processQuery = "insert into ItemAluguel VALUES (@A, @B)";
-                conexao.Execute(processQuery, item);                
+                conexao.Execute("insert into ItemAluguel (Id_Aluguel, Id_Midia, Quantidade) values (@IdAluguel, @IdMidia, @Quantidade)",
+                    new {
+                        IdAluguel = id,
+                        IdMidia = item.Midia.Id,
+                        item.Quantidade
+                });
+                           
             }
-
+            al.Id = id;
+            DesconectarSQL();
         }
     }
 }

@@ -48,6 +48,8 @@
             this.buttonAdicionarCarrinho = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.NomeMidia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAlugar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.samplesDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
@@ -194,6 +196,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewListaCarrinho.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewListaCarrinho.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.NomeMidia,
+            this.Quantidade});
             this.dataGridViewListaCarrinho.Location = new System.Drawing.Point(38, 474);
             this.dataGridViewListaCarrinho.Name = "dataGridViewListaCarrinho";
             this.dataGridViewListaCarrinho.ReadOnly = true;
@@ -239,6 +244,20 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(460, 103);
             this.dataGridView1.TabIndex = 18;
+            // 
+            // NomeMidia
+            // 
+            this.NomeMidia.DataPropertyName = "NomeMidia";
+            this.NomeMidia.HeaderText = "Midia";
+            this.NomeMidia.Name = "NomeMidia";
+            this.NomeMidia.ReadOnly = true;
+            // 
+            // Quantidade
+            // 
+            this.Quantidade.DataPropertyName = "Quantidade";
+            this.Quantidade.HeaderText = "Quantidade";
+            this.Quantidade.Name = "Quantidade";
+            this.Quantidade.ReadOnly = true;
             // 
             // TelaAlugarForm
             // 
@@ -297,5 +316,7 @@
         private System.Windows.Forms.Button buttonAdicionarCarrinho;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NomeMidia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Quantidade;
     }
 }

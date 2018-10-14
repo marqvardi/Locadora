@@ -56,10 +56,8 @@ namespace Locadora.DataAccess.DataAccess
             return clientes;
         }
 
-        public List<Cliente> PesquisarPorId(int id)
+        public Cliente PesquisarPorId(int id)
         {
-            List<Cliente> resultados = new List<Cliente>();
-
             ConectarSQL();
             SqlCommand comandoconsulta = new SqlCommand("select * from [Cliente] where id = @id", conexao);
             //comandoconsulta.Parameters.AddWithValue("@nome", "%" + nome + "%"); Mesma coisa que o debaixo. Mas melhor, ao inves de usar 3 endereco de memoria strings
@@ -67,20 +65,16 @@ namespace Locadora.DataAccess.DataAccess
 
             //SqlDataReader leitor = comandoconsulta.ExecuteReader(); O cratera diz que e' melhor usar o VAR abaixo
             var leitor = comandoconsulta.ExecuteReader();
-
+            Cliente c = new Cliente();
             while (leitor.Read())
             {
-                Cliente c = new Cliente();
                 c.Id = Convert.ToInt32(leitor["id"]);
                 c.Nome = leitor["nome"].ToString();
-              //  c.Endereco = leitor["endereco"].ToString();
-
-                resultados.Add(c);
             }
 
             DesconectarSQL();
 
-            return resultados;
+            return c;
             //grdPessoas.DataSource = dtPessoas;       
 
             //comandoconsulta.ExecuteNonQuery(); Nao e' necessario pois Select is Query

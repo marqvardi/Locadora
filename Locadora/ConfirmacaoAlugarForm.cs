@@ -13,52 +13,32 @@ using Locadora.DataAccess.DataAccess;
 namespace Locadora
 {
     public partial class ConfirmacaoAlugarForm : Form
-    {        
-        private List<int> _CarrinhoId_Midia;
-        private List<string> _CarrinhoNomeFilme;
+    {
+        private Aluguel _aluguel;
 
-        private List<ItemAluguel> ListaItemAluguel = new List<ItemAluguel>();
-
-        Aluguel al = new Aluguel();
-
-        public ConfirmacaoAlugarForm(int idCliente, List<int> carrinhoId_Midia, List<string> carrinhoNomeFilme)
+        public ConfirmacaoAlugarForm(Aluguel aluguel)
         {
             InitializeComponent();
-            al.Id_cliente = idCliente;
-            labelIDCliente.Text = Convert.ToString(al.Id_cliente);
-            labelValorSubtotal.Text = "0";
-            labelValorDesconto.Text = "0";
-            labelValorMulta.Text = "0";
-            labelValorTotal.Text = "0";
+            _aluguel = aluguel;
+            labelIDCliente.Text = aluguel.Cliente.Id.ToString();
+            labelValorSubtotal.Text = aluguel.ValorSubTotal.ToString("C2"); 
+            labelValorDesconto.Text = aluguel.ValorDesconto.ToString("C2"); 
+            labelValorMulta.Text = aluguel.ValorMulta.ToString("C2");
+            labelValorTotal.Text = aluguel.ValorTotal.ToString("C2");
 
-            _CarrinhoId_Midia = carrinhoId_Midia;
-            _CarrinhoNomeFilme = carrinhoNomeFilme;
-
-            DataTable dt = new DataTable();
-            dt.Columns.Add("IdMidia");
-            dt.Columns.Add("Nome do filme");         
-
-            for (int i = 0; i < _CarrinhoId_Midia.Count; i++)
-            {
-                dt.Rows.Add(_CarrinhoId_Midia[i], _CarrinhoNomeFilme[i]);
-            }
-
-            dgvConfirmar.DataSource = dt;
+            dgvConfirmar.DataSource = aluguel.Items;
         }
 
         private void buttonConfirmar_Click(object sender, EventArgs e)
         {
-            al.DataHora = DateTime.Now;
-            al.ValorSubTotal = 0;
-            al.ValorMulta = 0;
-            al.ValorDesconto = 0;
-            //al.ValorTotal = 0;
-            al.Pago = false;
-            al.DataPrevisaoEntrega = DateTime.Now.AddDays(1);
-            //al.Status = ??
+            DialogResult result = MessageBox.Show("","", MessageBoxButtons.OKCancel);
+            if (result == DialogResult.No ) return;        
 
             AlugarDataAccess inserirAluguel = new AlugarDataAccess();
-            inserirAluguel.InserirAluguel(al, _CarrinhoId_Midia);
+            inserirAluguel.InserirAluguel(_aluguel);
+
+            MessageBox.Show("Aluguel incluido com sucesso.","Informacao.", MessageBoxButtons.OK);
+            this.Close();
         }
     }
 }

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Locadora.DataAccess.DataAccess;
+using Locadora.DataAccess.Entidades;
 
 namespace Locadora
 {
@@ -52,12 +53,11 @@ namespace Locadora
         {            
             DataGridViewRow LinhaSelecionada = dataGridViewAlugar.Rows[rowIndex];
             int id = Convert.ToInt32(LinhaSelecionada.Cells[0].FormattedValue);
-            string nome = (LinhaSelecionada.Cells[1].FormattedValue).ToString();
+            ClienteDataAccess da = new ClienteDataAccess();            
+            Cliente cliente = da.PesquisarPorId(id);
 
-            TelaAlugarForm tl = new TelaAlugarForm(id, nome);
-            tl.Show();           
-
-            //Como fazer para o formulario anterior ficar inacessivel? ShowDialog()?
+            TelaAlugarForm tl = new TelaAlugarForm(cliente);
+            tl.Show();       
 
             tl.PuxarNome();           
 

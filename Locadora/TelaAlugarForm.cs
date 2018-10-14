@@ -15,35 +15,35 @@ namespace Locadora
 {
     public partial class TelaAlugarForm : Form
     {
-        private int _id;
-        private string _nome;               
+        private Cliente _cliente;
+        private Aluguel _aluguel;
 
-        //public TelaAlugarForm()
-        //{
-        //    InitializeComponent();
-        //}
+        private List<Midia> _midiasEncontradas;      
 
-        public TelaAlugarForm(int id, string nome)
+        public TelaAlugarForm(Cliente cliente)
         {
             InitializeComponent();
-            _id = id;
-            _nome = nome;           
+            _cliente = cliente;
+            _midiasEncontradas = new List<Midia>();
+            _aluguel = new Aluguel(cliente);
+            
         }
 
         public void PuxarNome()
         {
             ClienteDataAccess cn = new ClienteDataAccess();
-            label4.Text = Convert.ToString(_id);
-            label5.Text = _nome;
+            label4.Text = Convert.ToString(_cliente.Id);
+            label5.Text = _cliente.Nome;
         }
 
         private void buttonProcurar_Click(object sender, EventArgs e)
         {
             MidiaDataAccess md = new MidiaDataAccess();
 
-            dataGridViewAlugar.DataSource = md.PesquisarPorTitulo(textBoxTituloSearch.Text);
+           _midiasEncontradas = md.PesquisarPorTitulo(textBoxTituloSearch.Text).ToList();
+            dataGridViewAlugar.DataSource = _midiasEncontradas;
             textBoxTituloSearch.Clear();
-            textBoxTituloSearch.Focus();            
+            textBoxTituloSearch.Focus();
         }
 
         private void buttonAlugar_Click(object sender, EventArgs e)
@@ -52,11 +52,11 @@ namespace Locadora
 
             if (result == DialogResult.No) return;
 
-            ConfirmacaoAlugarForm cf = new ConfirmacaoAlugarForm(_id, CarrinhoId_Midia, CarrinhoNomeFilme);
+            ConfirmacaoAlugarForm cf = new ConfirmacaoAlugarForm(_aluguel);
             cf.Show();
 
             this.Close();
-        }              
+        }
 
         int rowIndex = 0;
 
@@ -65,45 +65,26 @@ namespace Locadora
             rowIndex = e.RowIndex;
         }
 
-        List<int> CarrinhoId_Midia = new List<int>();
-        List<string> CarrinhoNomeFilme = new List<string>();
-
-        DataTable dt = new DataTable();
-
         private void buttonAdicionarCarrinho_Click(object sender, EventArgs e)
         {
-            if (rowIndex < 0) return;
-            DataGridViewRow LinhaSelecionada = dataGridViewAlugar.Rows[rowIndex];
-            int checarQuantidadeEstoque = Convert.ToInt32(LinhaSelecionada.Cells[4].FormattedValue.ToString());
-
-            if (checarQuantidadeEstoque <= 0)
+            if (rowIndex < 0) return;       
+            
+            if (_midiasEncontradas[rowIndex].QuantidaDisponivel <= 0)
             {
                 MessageBox.Show("Estoque nao disponivel", "Alerta", MessageBoxButtons.OK);
                 return;
             }
+            if (_aluguel.Items
+                .Select(itemAluguel => itemAluguel.Midia)
+                .Any(midia => midia.Id  == _midiasEncontradas[rowIndex].Id))
+            {
+                MessageBox.Show("Item ja incluido", "Alerta", MessageBoxButtons.OK);
+            }
             else
             {
-                int idMidia = Convert.ToInt16(LinhaSelecionada.Cells[0].FormattedValue.ToString());
-                string NomeFilme = (LinhaSelecionada.Cells[1].FormattedValue.ToString());
-
-                if (dt.Columns.Count <= 0)
-                {
-                    dt.Columns.Add("IdMidia");
-                    dt.Columns.Add("Nome do Filme");
-                }
-                
-                if (CarrinhoId_Midia.Contains(idMidia))
-                {
-                    MessageBox.Show("Item ja adicionado", "Alerta", MessageBoxButtons.OK);
-                    return;
-                }
-                
-                dt.Rows.Add(idMidia, NomeFilme);
-
-                CarrinhoId_Midia.Add(idMidia);
-                CarrinhoNomeFilme.Add(NomeFilme);
-                            
-                dataGridViewListaCarrinho.DataSource = dt;
+                _aluguel.Items.Add(new ItemAluguel(_midiasEncontradas[rowIndex]));
+                dataGridViewListaCarrinho.DataSource = null;
+                dataGridViewListaCarrinho.DataSource = _aluguel.Items;
             }
         }
        
