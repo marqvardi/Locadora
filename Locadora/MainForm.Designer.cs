@@ -44,6 +44,7 @@
             this.parametrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastrarParametrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.caixaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aluguelPendentesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -109,21 +110,22 @@
             // cadastrarProdutoToolStripMenuItem
             // 
             this.cadastrarProdutoToolStripMenuItem.Name = "cadastrarProdutoToolStripMenuItem";
-            this.cadastrarProdutoToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.cadastrarProdutoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.cadastrarProdutoToolStripMenuItem.Text = "Cadastrar produto";
             this.cadastrarProdutoToolStripMenuItem.Click += new System.EventHandler(this.cadastrarProdutoToolStripMenuItem_Click);
             // 
             // procurarProdutoToolStripMenuItem
             // 
             this.procurarProdutoToolStripMenuItem.Name = "procurarProdutoToolStripMenuItem";
-            this.procurarProdutoToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.procurarProdutoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.procurarProdutoToolStripMenuItem.Text = "Procurar produto";
             this.procurarProdutoToolStripMenuItem.Click += new System.EventHandler(this.procurarProdutoToolStripMenuItem_Click);
             // 
             // administrativoToolStripMenuItem
             // 
             this.administrativoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.alugarToolStripMenuItem});
+            this.alugarToolStripMenuItem,
+            this.aluguelPendentesToolStripMenuItem});
             this.administrativoToolStripMenuItem.Name = "administrativoToolStripMenuItem";
             this.administrativoToolStripMenuItem.Size = new System.Drawing.Size(97, 20);
             this.administrativoToolStripMenuItem.Text = "Administrativo";
@@ -157,6 +159,13 @@
             this.caixaToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
             this.caixaToolStripMenuItem.Text = "Caixa";
             this.caixaToolStripMenuItem.Click += new System.EventHandler(this.caixaToolStripMenuItem_Click);
+            // 
+            // aluguelPendentesToolStripMenuItem
+            // 
+            this.aluguelPendentesToolStripMenuItem.Name = "aluguelPendentesToolStripMenuItem";
+            this.aluguelPendentesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aluguelPendentesToolStripMenuItem.Text = "Aluguel pendentes";
+            this.aluguelPendentesToolStripMenuItem.Click += new System.EventHandler(this.aluguelPendentesToolStripMenuItem_Click);
             // 
             // Formulario
             // 
@@ -197,6 +206,7 @@
         private System.Windows.Forms.ToolStripMenuItem parametrosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cadastrarParametrosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem caixaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aluguelPendentesToolStripMenuItem;
     }
 }
 

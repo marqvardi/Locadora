@@ -23,5 +23,7 @@ namespace Locadora.DataAccess.Entidades
         public List<Endereco> Enderecos { get; set; } 
 
         public List<Aluguel> Alugueis { get; set; }
+
+        public List<ItemAluguel> ItemAluguel { get; set; }
     }
 }

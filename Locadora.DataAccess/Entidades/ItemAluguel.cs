@@ -4,6 +4,7 @@
     {
         public int Quantidade { get; private set; }
         public Midia Midia { get; private set; }
+        public bool StatusDevolucao { get; set; }
 
         public ItemAluguel(Midia midia, int quantidade = 1)
         {

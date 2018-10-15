@@ -11,7 +11,7 @@
         public int QuantidaDisponivel { get; set; }
         public TiposMidia TipoMidia { get; set; }    
         public TipoDeCategoria TipoCategoria { get; set; }
-        public int Id_categoria { get; set; }
+        public int Id_categoria { get; set; }       
 
     }
 }

@@ -25,12 +25,11 @@ namespace Locadora
             InitializeComponent();
             _cliente = cliente;
             _midiasEncontradas = new List<Midia>();
-            _aluguel = new Aluguel(cliente);
-            
+            _aluguel = new Aluguel(cliente);            
         }
 
         public void PuxarNome()
-        {
+        {            
             ClienteDataAccess cn = new ClienteDataAccess();
             label4.Text = Convert.ToString(_cliente.Id);
             label5.Text = _cliente.Nome;
@@ -82,7 +81,8 @@ namespace Locadora
             }
             else
             {
-                _aluguel.Items.Add(new ItemAluguel(_midiasEncontradas[rowIndex]));
+                //_midiasEncontradas[rowIndex].QuantidadeAlugada =+ 1;                
+                _aluguel.Items.Add(new ItemAluguel(_midiasEncontradas[rowIndex]));               
                 dataGridViewListaCarrinho.DataSource = null;
                 dataGridViewListaCarrinho.DataSource = _aluguel.Items;
             }

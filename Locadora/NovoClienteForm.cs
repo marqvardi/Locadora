@@ -47,7 +47,7 @@ namespace Locadora
             {
                 cn.InsertSQLCliente(c);
 
-                Endereco en = new Endereco(c.Id);
+                Endereco en = new Endereco(c.Id); // Linka  a Primary key?
 
                 en.Logradouro = textBoxClienteLogradouro.Text;
                 en.Bairro = textBoxClienteBairro.Text;

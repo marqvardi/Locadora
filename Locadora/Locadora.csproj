@@ -53,6 +53,12 @@
     <Compile Include="AlugarForm.Designer.cs">
       <DependentUpon>AlugarForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AluguelPendentesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AluguelPendentesForm.Designer.cs">
+      <DependentUpon>AluguelPendentesForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="CaixaForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,16 +114,6 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="SamplesDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SamplesDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="SamplesDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SamplesDataSet1.xsd</DependentUpon>
-    </Compile>
     <Compile Include="TelaAlugarForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +122,9 @@
     </Compile>
     <EmbeddedResource Include="AlugarForm.resx">
       <DependentUpon>AlugarForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AluguelPendentesForm.resx">
+      <DependentUpon>AluguelPendentesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CaixaForm.resx">
       <DependentUpon>CaixaForm.cs</DependentUpon>
@@ -172,28 +171,6 @@
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="SamplesDataSet.xsc">
-      <DependentUpon>SamplesDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="SamplesDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>SamplesDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="SamplesDataSet.xss">
-      <DependentUpon>SamplesDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="SamplesDataSet1.xsc">
-      <DependentUpon>SamplesDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="SamplesDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>SamplesDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="SamplesDataSet1.xss">
-      <DependentUpon>SamplesDataSet1.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

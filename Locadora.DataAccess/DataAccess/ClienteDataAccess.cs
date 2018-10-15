@@ -19,10 +19,9 @@ namespace Locadora.DataAccess.DataAccess
             ConectarSQL();
             //Explicar melhor esse lance de "output inserted.id"
             int id = conexao.Query<int>("insert into Cliente (Nome, Datanascimento, ativo) output inserted.Id values (@Nome, @datanascimento, @ativo)", cliente).Single();
-            cliente.Id = id;
-           
+            cliente.Id = id;           
             DesconectarSQL();
-        }
+        }       
 
         public void InsertSQLEndereco(Endereco endereco)
         {
@@ -94,8 +93,7 @@ namespace Locadora.DataAccess.DataAccess
             {
                 Cliente c = new Cliente();
                 c.Id = Convert.ToInt32(leitor["id"]);
-                c.Nome = leitor["nome"].ToString();
-               // c.Endereco = leitor["endereco"].ToString();
+                c.Nome = leitor["nome"].ToString();               
 
                 resultados.Add(c);
             }

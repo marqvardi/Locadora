@@ -25,13 +25,13 @@ namespace Locadora
             labelValorDesconto.Text = aluguel.ValorDesconto.ToString("C2"); 
             labelValorMulta.Text = aluguel.ValorMulta.ToString("C2");
             labelValorTotal.Text = aluguel.ValorTotal.ToString("C2");
-
+            
             dgvConfirmar.DataSource = aluguel.Items;
         }
 
         private void buttonConfirmar_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("","", MessageBoxButtons.OKCancel);
+            DialogResult result = MessageBox.Show("Confirma o aluguel?","Alerta!", MessageBoxButtons.OKCancel);
             if (result == DialogResult.No ) return;        
 
             AlugarDataAccess inserirAluguel = new AlugarDataAccess();

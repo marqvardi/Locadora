@@ -30,9 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridViewAlugar = new System.Windows.Forms.DataGridView();
-            this.samplesDataSet1 = new Locadora.SamplesDataSet1();
             this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.clienteTableAdapter = new Locadora.SamplesDataSet1TableAdapters.ClienteTableAdapter();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxTituloSearch = new System.Windows.Forms.TextBox();
@@ -51,7 +49,6 @@
             this.NomeMidia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAlugar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.samplesDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewJaAlugadoPeloCliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListaCarrinho)).BeginInit();
@@ -79,17 +76,14 @@
             // 
             // samplesDataSet1
             // 
-            this.samplesDataSet1.DataSetName = "SamplesDataSet1";
-            this.samplesDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+           
             // 
             // clienteBindingSource
             // 
             this.clienteBindingSource.DataMember = "Cliente";
-            this.clienteBindingSource.DataSource = this.samplesDataSet1;
             // 
             // clienteTableAdapter
             // 
-            this.clienteTableAdapter.ClearBeforeFill = true;
             // 
             // label1
             // 
@@ -286,7 +280,6 @@
             this.ShowIcon = false;
             this.Text = "Alugando";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAlugar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.samplesDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewJaAlugadoPeloCliente)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListaCarrinho)).EndInit();
@@ -298,9 +291,7 @@
 
         #endregion
         private System.Windows.Forms.DataGridView dataGridViewAlugar;
-        private SamplesDataSet1 samplesDataSet1;
         private System.Windows.Forms.BindingSource clienteBindingSource;
-        private SamplesDataSet1TableAdapters.ClienteTableAdapter clienteTableAdapter;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBoxTituloSearch;

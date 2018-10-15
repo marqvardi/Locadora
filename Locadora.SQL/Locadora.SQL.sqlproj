@@ -129,6 +129,7 @@
     <Build Include="Aluguel.sql" />
     <Build Include="Cliente.sql" />
     <Build Include="Valores.sql" />
+    <Build Include="DevolucaoPendente.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="Locadora.SQL.refactorlog" />

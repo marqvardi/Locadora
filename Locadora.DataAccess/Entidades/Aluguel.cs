@@ -78,11 +78,11 @@ namespace Locadora.DataAccess.Entidades
             }
         }
 
-        public bool HasMidia(Midia midiaAComparar)
-        {
-            return Items
-                .Select(itemAluguel => itemAluguel.Midia)
-                .Any(midia => midia.Id == midiaAComparar.Id);
-        }
+        //public bool HasMidia(Midia midiaAComparar)
+        //{
+        //    return Items
+        //        .Select(itemAluguel => itemAluguel.Midia)
+        //        .Any(midia => midia.Id == midiaAComparar.Id);
+        //}
     }
 }

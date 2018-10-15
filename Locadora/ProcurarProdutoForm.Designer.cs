@@ -34,11 +34,8 @@
             this.radioButtonProcurarPorCategoria = new System.Windows.Forms.RadioButton();
             this.textBoxProcurarPorTitulo = new System.Windows.Forms.TextBox();
             this.comboBoxProcurarPorCategoria = new System.Windows.Forms.ComboBox();
-            this.samplesDataSet = new Locadora.SamplesDataSet();
             this.dataGridViewProcurarTituloOuCategoria = new System.Windows.Forms.DataGridView();
             this.midiaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.midiaTableAdapter = new Locadora.SamplesDataSetTableAdapters.MidiaTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.samplesDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProcurarTituloOuCategoria)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.midiaBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -107,8 +104,7 @@
             // 
             // samplesDataSet
             // 
-            this.samplesDataSet.DataSetName = "SamplesDataSet";
-            this.samplesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+           
             // 
             // dataGridViewProcurarTituloOuCategoria
             // 
@@ -129,11 +125,9 @@
             // midiaBindingSource
             // 
             this.midiaBindingSource.DataMember = "Midia";
-            this.midiaBindingSource.DataSource = this.samplesDataSet;
             // 
             // midiaTableAdapter
             // 
-            this.midiaTableAdapter.ClearBeforeFill = true;
             // 
             // ProcurarProdutoForm
             // 
@@ -152,7 +146,6 @@
             this.ShowIcon = false;
             this.Text = "Procurar por produto";
             this.Load += new System.EventHandler(this.ProcurarProdutoForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.samplesDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProcurarTituloOuCategoria)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.midiaBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -168,8 +161,6 @@
         private System.Windows.Forms.TextBox textBoxProcurarPorTitulo;
         private System.Windows.Forms.ComboBox comboBoxProcurarPorCategoria;
         private System.Windows.Forms.DataGridView dataGridViewProcurarTituloOuCategoria;
-        private SamplesDataSet samplesDataSet;
         private System.Windows.Forms.BindingSource midiaBindingSource;
-        private SamplesDataSetTableAdapters.MidiaTableAdapter midiaTableAdapter;
     }
 }

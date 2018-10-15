@@ -26,6 +26,7 @@ namespace Locadora
         private AlugarForm _alugarForm;
         private ValoresForm _parametrosForm;
         private CaixaForm _caixaForm;
+        private AluguelPendentesForm _AluguelPendentesForm;
         
         private void cadastrarNovosClientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -150,5 +151,22 @@ namespace Locadora
 
 
         }
+
+        private void aluguelPendentesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (_AluguelPendentesForm == null || _AluguelPendentesForm.IsDisposed)
+            {
+                _AluguelPendentesForm = new AluguelPendentesForm
+                {
+                    MdiParent = this
+                };
+                _AluguelPendentesForm.Show();
+            }
+            else
+            {
+                 _AluguelPendentesForm.Focus();
+
+             }
+}
     }
 }
