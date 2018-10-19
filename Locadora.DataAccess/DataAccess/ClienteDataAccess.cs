@@ -21,8 +21,8 @@ namespace Locadora.DataAccess.DataAccess
             int id = conexao.Query<int>("insert into Cliente (Nome, Datanascimento, ativo) output inserted.Id values (@Nome, @datanascimento, @ativo)", cliente).Single();
             cliente.Id = id;           
             DesconectarSQL();
-        }       
-
+        }
+       
         public void InsertSQLEndereco(Endereco endereco)
         {
             ConectarSQL();
@@ -47,7 +47,7 @@ namespace Locadora.DataAccess.DataAccess
 
             foreach(Cliente cliente in clientes)
             {
-                cliente.Enderecos.AddRange(enderecos.Where(e => e.IdCliente == cliente.Id)); //Nao entendi muito bem essa linha
+                cliente.Enderecos.AddRange(enderecos.Where(e => e.IdCliente == cliente.Id));               
             }
 
             DesconectarSQL();

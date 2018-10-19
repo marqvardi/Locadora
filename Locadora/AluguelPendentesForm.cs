@@ -15,32 +15,52 @@ namespace Locadora
 {
     public partial class AluguelPendentesForm : Form
     {
+        int rowIndex;
+        private Cliente clienteCorrente;
+        private List<Cliente> resultados;      
+
         public AluguelPendentesForm()
         {
             InitializeComponent();
         }
-
-        private List<Cliente> resultados;
-
+        
         private void buttonPesquisar_Click(object sender, EventArgs e)
         {
-            Cliente c = new Cliente();
-            ClienteDataAccess cd = new ClienteDataAccess();
-            if (textBoxResultado.Text == null || textBoxResultado.Text == "") return;
+            AlugarDataAccess al = new AlugarDataAccess();
+            resultados = new List<Cliente>();
 
-            if (radioButtonNome.Checked)
-            {          
-                //resultados = cd.PesquisarPorNomePendente(textBoxResultado.Text).ToList();
-                dgvPesquisar.DataSource = resultados;
-                textBoxResultado.Clear();
+            resultados = al.PesquisarPorPendencia(textBoxResultado.Text, "").ToList();
+            dgvPesquisar.DataSource = resultados;
 
-            }
-            if (radioButtonID.Checked)
-            {
+            //resultados = al.PesquisarPorPendencia(textBoxResultado.Text, "").ToList();
+            //dgvPesquisar.DataSource = resultados;
 
-                //dgvPesquisar.DataSource = cd.PesquisarPorIdPendente(Convert.ToInt32(textBoxResultado.Text));
-                textBoxResultado.Clear();
-            }
+
         }
+
+        private void dgvPesquisar_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+            rowIndex = e.RowIndex;
+            clienteCorrente = resultados[rowIndex];
+
+            dgvAluguel.DataSource = clienteCorrente.Alugueis;
+        }
+
+        private void dgvAluguel_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            AlugarDataAccess al = new AlugarDataAccess();
+
+            if (e.RowIndex < 0) return;
+            rowIndex = e.RowIndex;
+            clienteCorrente = resultados[rowIndex];
+            
+            dgvItensAlugados.DataSource = clienteCorrente.ItemAluguel;
+        }
+
+        //private void button1_Click(object sender, EventArgs e)
+        //{
+
+        //}
     }
 }

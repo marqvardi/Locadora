@@ -15,6 +15,19 @@ namespace Locadora.DataAccess.Entidades
         public bool Pago { get; set; }
         public DateTime? DataEntrega { get; set; }
         public string Status { get; set; }
+        //public DateTime DataPrevisaoEntrega { get; set; }
+
+        public Aluguel()
+        {
+            Items = new List<ItemAluguel>();
+            ValoresDataAccess da = new ValoresDataAccess();
+            _valores = new Valores();
+            _valores.ValorAluguel = da.PuxarValorAluguel(1);
+            _valores.ValorDesconto = da.PuxarValorDesconto(1);
+            _valores.ValorMulta = da.PuxarValorMulta(1);
+        }
+
+        public List<Aluguel> Alugueis { get; set; }
 
         public Aluguel(Cliente cliente)
         {
@@ -24,6 +37,7 @@ namespace Locadora.DataAccess.Entidades
             _valores.ValorAluguel = da.PuxarValorAluguel(1);
             _valores.ValorDesconto = da.PuxarValorDesconto(1);
             _valores.ValorMulta = da.PuxarValorMulta(1);
+
             Cliente = cliente;
         }
 
@@ -32,7 +46,7 @@ namespace Locadora.DataAccess.Entidades
             get
             {
                 return _valores.ValorAluguel * Items.Count;
-            }
+            } 
         }
 
         public decimal ValorDesconto
@@ -51,7 +65,7 @@ namespace Locadora.DataAccess.Entidades
             get
             {
                 return ValorSubTotal - ValorDesconto + ValorMulta;
-            }
+            }            
         }
 
         public decimal ValorMulta
@@ -59,9 +73,9 @@ namespace Locadora.DataAccess.Entidades
             get
             {
                 return 0;
-            }
+            }            
         }
-     
+
         public DateTime DataPrevisaoEntrega
         {
             get
@@ -69,7 +83,9 @@ namespace Locadora.DataAccess.Entidades
                 return DateTime.Now.AddDays(1);
             }
         }
-       
+
+        //public int IdCliente { get; set; }
+
         public int IdCliente
         {
             get

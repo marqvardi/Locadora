@@ -27,7 +27,7 @@ namespace Locadora
             if (radioButtonPorNome.Checked)
             {
                 //Explicar por que ele lista todos os itens digitados e nao apenas a primeira occorencia? ToList()?
-                resultados = cn.PesquisarPorNome(txtBoxPesquisarCliente.Text).ToList();
+                resultados = cn.PesquisarPorNome(txtBoxPesquisarCliente.Text).ToList();                
                 dataGridViewPesquisarCliente.DataSource = resultados;
                 txtBoxPesquisarCliente.Clear();
             }
@@ -83,8 +83,6 @@ namespace Locadora
             clienteCorrente = resultados[rowIndex];
 
             dgvEndereco.DataSource = clienteCorrente.Enderecos;  //Doideira esse caminho, explicar melhor. "ponto" endereco que e' complciado entender.          
-
-            //MessageBox.Show("Confirmacao para apagar usuario?", "ATENCAO", MessageBoxButtons.YesNo);
         }
 
         private void buttonDeletarUsuario_Click(object sender, EventArgs e)

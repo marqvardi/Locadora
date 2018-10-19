@@ -82,9 +82,9 @@ namespace Locadora
             else
             {
                 //_midiasEncontradas[rowIndex].QuantidadeAlugada =+ 1;                
-                _aluguel.Items.Add(new ItemAluguel(_midiasEncontradas[rowIndex]));               
+                _aluguel.Items.Add(new ItemAluguel(_cliente, _midiasEncontradas[rowIndex]));               
                 dataGridViewListaCarrinho.DataSource = null;
-                dataGridViewListaCarrinho.DataSource = _aluguel.Items;
+                dataGridViewListaCarrinho.DataSource = _aluguel.Items;               
             }
         }
        
