@@ -58,6 +58,7 @@ namespace Locadora
         }
 
         int rowIndex = 0;
+        int rowIndex1 = 0;
 
         private void dataGridViewAlugar_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -87,7 +88,27 @@ namespace Locadora
                 dataGridViewListaCarrinho.DataSource = _aluguel.Items;               
             }
         }
-       
+
+        //private void button1_Click(object sender, EventArgs e)
+        //{
+        //    if (rowIndex1 < 0) return;
+
+        //    foreach (var item in _midiasEncontradas)
+        //    {
+        //        if (_midiasEncontradas.Contains == [rowIndex1])
+        //        {
+        //            _midiasEncontradas.Remove[rowIndex1];
+        //        }
+        //        return;
+        //    }
+
+        //    _midiasEncontradas.RemoveAt(rowIndex1);           
+        //}
+
+        private void dataGridViewListaCarrinho_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            rowIndex1 = e.RowIndex;
+        }
     }
 }
 

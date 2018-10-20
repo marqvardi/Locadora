@@ -66,7 +66,7 @@ namespace Locadora.DataAccess.DataAccess
                     select * from Aluguel a inner join ItemAluguel i on a.Id = i.Id_Aluguel"
                    ,
                new { nome = $"%{nome}%" });
-
+                        
             IEnumerable<Cliente> clientes = resultados.Read<Cliente>();
 
             IEnumerable<Aluguel> aluguel = resultados.Read<Aluguel>();
