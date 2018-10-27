@@ -42,7 +42,7 @@ namespace Locadora.DataAccess.DataAccess
                         IdAluguel = id,
                         IdMidia = item.Midia.Id,                        
                         item.Quantidade,
-                        StatusDevolucao = item.StatusDevolucao                        
+                        StatusDevolucao = item.StatusDevolucao,  
                 });                           
             }
             foreach (var item in al.Items)
@@ -62,49 +62,42 @@ namespace Locadora.DataAccess.DataAccess
             ConectarSQL();
 
             GridReader resultados = conexao.QueryMultiple(@"select * from cliente where Nome like @nome;
-                    select a.*, id_cliente as IdCliente from Aluguel a inner join cliente c on c.id = a.id_cliente where a.Status = status
-                    select * from Aluguel a inner join ItemAluguel i on a.Id = i.Id_Aluguel"
-                   ,
-               new { nome = $"%{nome}%" });
-                        
+                    select distinct a.*, id_cliente as IdCliente from Aluguel a inner join cliente c on c.id = a.id_cliente where a.Status = @status and c.Nome like @nome;
+                    select distinct i.* from Cliente c inner join Aluguel a on c.id = a.Id_cliente inner join ItemAluguel i on a.Id = i.Id_Aluguel where c.nome like @nome and a.Status = @status;
+                    select distinct m.* from Cliente c inner join Aluguel a on c.id = a.Id_cliente inner join ItemAluguel i on a.Id = i.Id_Aluguel inner join Midia m on m.id = i.Id_Midia where c.nome like @nome and a.Status = @status;"
+            ,
+            new { nome = $"%{nome}%", status });
+
+
             IEnumerable<Cliente> clientes = resultados.Read<Cliente>();
 
-            IEnumerable<Aluguel> aluguel = resultados.Read<Aluguel>();
+            IEnumerable<Aluguel> alugueis = resultados.Read<Aluguel>();
 
-            IEnumerable<ItemAluguel> itemAluguel = resultados.Read<ItemAluguel>();
+            IEnumerable<ItemAluguel> itemsAluguel = resultados.Read<ItemAluguel>();
+
+            IEnumerable<Midia> midias = resultados.Read<Midia>();                 
+ 
+            
+            foreach (ItemAluguel item in itemsAluguel)
+            {
+                item.Midia = midias.Single(m => m.Id == item.Id_Midia);
+            }
+
+            foreach (Aluguel aluguel in alugueis)
+            {
+                aluguel.Items.AddRange(itemsAluguel.Where(i => i.Id_Aluguel == aluguel.Id));
+            }
 
             foreach (Cliente cliente in clientes)
             {
-                //cliente.Alugueis.AddRange(items); //FUNCIONA PARCIALMENTE            
-                cliente.Alugueis.AddRange(aluguel.Where(a => a.IdCliente == cliente.Id));
-                
-                cliente.ItemAluguel.AddRange(itemAluguel.Where(i => i.Id == cliente.Id));
+                cliente.Alugueis.AddRange(alugueis.Where(a => a.IdCliente == cliente.Id));
+                cliente.Alugueis.ForEach(a => a.Cliente = cliente);
             }
-
+                      
             DesconectarSQL();
 
             return clientes;
-        }
-
-        //public IEnumerable<ItemAluguel> PuxarItensAlugados(int idAluguel_ItemALuguel, int Id_Aluguel)
-        //{
-        //    ConectarSQL();
-
-        //    GridReader resultados = conexao.QueryMultiple("select * from itemAluguel where Id_Aluguel like @idAluguel_ItemALuguel; select a.*, id_cliente as IdCliente from Aluguel a inner join ItemAluguel c on c.id = a.id_cliente where a.Id = Id_Aluguel");         
-          
-        //    IEnumerable<Aluguel> aluguel = resultados.Read<Aluguel>();
-
-        //    IEnumerable<ItemAluguel> items = resultados.Read<ItemAluguel>();
-
-        //    foreach (ItemAluguel item in items)
-        //    {   
-        //        item.AluguelLista.AddRange(aluguel.Where(a => a.Id == item.Id_Aluguel));
-        //    }
-
-        //    DesconectarSQL();
-
-        //    return items;
-        //}
+        }     
 
     }
 }

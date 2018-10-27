@@ -1,21 +1,20 @@
 ﻿using Locadora.DataAccess.DataAccess;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace Locadora.DataAccess.Entidades
 {
     public class Aluguel
     {
         public int Id { get; set; }
-        public Cliente Cliente { get; private set; }
+
         public List<ItemAluguel> Items { get; set; }
         private Valores _valores;
         public DateTime DataHora { get; set; }
         public bool Pago { get; set; }
         public DateTime? DataEntrega { get; set; }
         public string Status { get; set; }
-        //public DateTime DataPrevisaoEntrega { get; set; }
+    
 
         public Aluguel()
         {
@@ -39,6 +38,7 @@ namespace Locadora.DataAccess.Entidades
             _valores.ValorMulta = da.PuxarValorMulta(1);
 
             Cliente = cliente;
+            
         }
 
         public decimal ValorSubTotal
@@ -46,7 +46,7 @@ namespace Locadora.DataAccess.Entidades
             get
             {
                 return _valores.ValorAluguel * Items.Count;
-            } 
+            }
         }
 
         public decimal ValorDesconto
@@ -65,7 +65,7 @@ namespace Locadora.DataAccess.Entidades
             get
             {
                 return ValorSubTotal - ValorDesconto + ValorMulta;
-            }            
+            }
         }
 
         public decimal ValorMulta
@@ -73,26 +73,42 @@ namespace Locadora.DataAccess.Entidades
             get
             {
                 return 0;
-            }            
+            }
         }
 
         public DateTime DataPrevisaoEntrega
         {
             get
             {
-                return DateTime.Now.AddDays(1);
+                return DataHora.AddDays(1);
             }
         }
 
-        //public int IdCliente { get; set; }
+        private Cliente cliente;
 
-        public int IdCliente
+        public Cliente Cliente
         {
             get
             {
-                return Cliente.Id;
+                return cliente;
+            }
+            internal set
+            {
+                cliente = value;
+                if (cliente != null)
+                {
+                    IdCliente = cliente.Id;
+                }
+                else
+                {
+                    IdCliente = 0;
+                }
             }
         }
+
+        public int IdCliente { get; internal set; }
+
+
 
         //public bool HasMidia(Midia midiaAComparar)
         //{

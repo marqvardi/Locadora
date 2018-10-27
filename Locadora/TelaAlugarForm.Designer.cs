@@ -42,13 +42,11 @@
             this.dataGridViewJaAlugadoPeloCliente = new System.Windows.Forms.DataGridView();
             this.label6 = new System.Windows.Forms.Label();
             this.dataGridViewListaCarrinho = new System.Windows.Forms.DataGridView();
-            this.NomeMidia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label7 = new System.Windows.Forms.Label();
             this.buttonAdicionarCarrinho = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonRemoverCarrinho = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAlugar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewJaAlugadoPeloCliente)).BeginInit();
@@ -184,30 +182,12 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewListaCarrinho.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewListaCarrinho.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.NomeMidia,
-            this.Quantidade});
             this.dataGridViewListaCarrinho.Location = new System.Drawing.Point(35, 474);
             this.dataGridViewListaCarrinho.Name = "dataGridViewListaCarrinho";
             this.dataGridViewListaCarrinho.ReadOnly = true;
             this.dataGridViewListaCarrinho.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewListaCarrinho.Size = new System.Drawing.Size(474, 257);
             this.dataGridViewListaCarrinho.TabIndex = 14;
-            this.dataGridViewListaCarrinho.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewListaCarrinho_CellClick);
-            // 
-            // NomeMidia
-            // 
-            this.NomeMidia.DataPropertyName = "NomeMidia";
-            this.NomeMidia.HeaderText = "Midia";
-            this.NomeMidia.Name = "NomeMidia";
-            this.NomeMidia.ReadOnly = true;
-            // 
-            // Quantidade
-            // 
-            this.Quantidade.DataPropertyName = "Quantidade";
-            this.Quantidade.HeaderText = "Quantidade";
-            this.Quantidade.Name = "Quantidade";
-            this.Quantidade.ReadOnly = true;
             // 
             // label7
             // 
@@ -249,16 +229,16 @@
             this.dataGridView1.Size = new System.Drawing.Size(460, 103);
             this.dataGridView1.TabIndex = 18;
             // 
-            // button1
+            // buttonRemoverCarrinho
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button1.Location = new System.Drawing.Point(35, 751);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(129, 23);
-            this.button1.TabIndex = 19;
-            this.button1.Text = " Remover do carrinho";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.buttonRemoverCarrinho.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.buttonRemoverCarrinho.Location = new System.Drawing.Point(35, 751);
+            this.buttonRemoverCarrinho.Name = "buttonRemoverCarrinho";
+            this.buttonRemoverCarrinho.Size = new System.Drawing.Size(129, 23);
+            this.buttonRemoverCarrinho.TabIndex = 19;
+            this.buttonRemoverCarrinho.Text = " Remover do carrinho";
+            this.buttonRemoverCarrinho.UseVisualStyleBackColor = false;
+            this.buttonRemoverCarrinho.Click += new System.EventHandler(this.buttonRemoverCarrinho_Click);
             // 
             // TelaAlugarForm
             // 
@@ -266,7 +246,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1044, 786);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonRemoverCarrinho);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.buttonAdicionarCarrinho);
@@ -315,8 +295,6 @@
         private System.Windows.Forms.Button buttonAdicionarCarrinho;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NomeMidia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Quantidade;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonRemoverCarrinho;
     }
 }

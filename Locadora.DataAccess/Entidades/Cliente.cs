@@ -9,7 +9,6 @@ namespace Locadora.DataAccess.Entidades
         {
             Enderecos = new List<Endereco>();
             Alugueis = new List<Aluguel>();
-            ItemAluguel = new List<ItemAluguel>();
         }
 
         public int Id { get; set; }
@@ -23,7 +22,5 @@ namespace Locadora.DataAccess.Entidades
         public List<Endereco> Enderecos { get; set; } 
 
         public List<Aluguel> Alugueis { get; set; }
-
-        public List<ItemAluguel> ItemAluguel { get; set; }
     }
 }

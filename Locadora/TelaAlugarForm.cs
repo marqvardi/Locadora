@@ -83,31 +83,19 @@ namespace Locadora
             else
             {
                 //_midiasEncontradas[rowIndex].QuantidadeAlugada =+ 1;                
-                _aluguel.Items.Add(new ItemAluguel(_cliente, _midiasEncontradas[rowIndex]));               
+                _aluguel.Items.Add(new ItemAluguel(_aluguel, _midiasEncontradas[rowIndex]));               
                 dataGridViewListaCarrinho.DataSource = null;
                 dataGridViewListaCarrinho.DataSource = _aluguel.Items;               
             }
         }
 
-        //private void button1_Click(object sender, EventArgs e)
-        //{
-        //    if (rowIndex1 < 0) return;
-
-        //    foreach (var item in _midiasEncontradas)
-        //    {
-        //        if (_midiasEncontradas.Contains == [rowIndex1])
-        //        {
-        //            _midiasEncontradas.Remove[rowIndex1];
-        //        }
-        //        return;
-        //    }
-
-        //    _midiasEncontradas.RemoveAt(rowIndex1);           
-        //}
-
-        private void dataGridViewListaCarrinho_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void buttonRemoverCarrinho_Click(object sender, EventArgs e)
         {
-            rowIndex1 = e.RowIndex;
+            if (rowIndex1 < 0) return;
+
+            _aluguel.Items.RemoveAt(rowIndex1);
+            dataGridViewListaCarrinho.DataSource = null;
+            dataGridViewListaCarrinho.DataSource = _aluguel.Items;
         }
     }
 }

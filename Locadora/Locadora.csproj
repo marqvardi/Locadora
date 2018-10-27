@@ -89,6 +89,12 @@
     <Compile Include="NovoClienteForm.Designer.cs">
       <DependentUpon>NovoClienteForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="TestePendenciaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TestePendenciaForm.Designer.cs">
+      <DependentUpon>TestePendenciaForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ValoresForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,6 +146,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NovoClienteForm.resx">
       <DependentUpon>NovoClienteForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestePendenciaForm.resx">
+      <DependentUpon>TestePendenciaForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ValoresForm.resx">
       <DependentUpon>ValoresForm.cs</DependentUpon>
