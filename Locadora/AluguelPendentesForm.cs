@@ -27,8 +27,10 @@ namespace Locadora
         {
             InitializeComponent();
             comboBoxPendencia.Text = "Atrasado";
+            dgvItensAlugados.AutoGenerateColumns = false;
+            dgvAluguel.AutoGenerateColumns = false;
         }
-        
+
         private void buttonPesquisar_Click(object sender, EventArgs e)
         {
             AlugarDataAccess al = new AlugarDataAccess();
@@ -63,28 +65,19 @@ namespace Locadora
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //List<DataGridViewRow> dataGridRowsLista = new List<DataGridViewRow>();
+            DialogResult men = MessageBox.Show("Deseja mesmo devolver?", "Alerta", MessageBoxButtons.OKCancel);
+            if (men == DialogResult.Cancel) return;
 
             foreach (DataGridViewRow row in dgvItensAlugados.Rows)
             {
-                if (Convert.ToBoolean(row.Cells[StatusDevolucaoCol.Name].Value) == true)
-                {
-                    aluguelCorrente.Pago = true;
-                   // dataGridRowsLista.Add(row);
-                }
+                DataGridViewCheckBoxCell celula = (DataGridViewCheckBoxCell)row.Cells[StatusDevolucaoCol.Name];
+                aluguelCorrente.Items[row.Index].StatusDevolucao = Convert.ToBoolean(celula.Value);             
+            }     
 
-                // Fazer um metodo SQL colocando no itemAluguel esse Id_Midia como True no status de devolucao de cada midia  
-                // Messagem "Vai querer devolver mesmo esse filme? " Mostrar o NomeMidia
-
-            }
-
-
+            AlugarDataAccess alugarDataAccess = new AlugarDataAccess();
+            alugarDataAccess.DevolverAluguel(aluguelCorrente);
+            dgvItensAlugados.DataSource = null;
+            dgvAluguel.DataSource = null;
         }
-
-        //private void dgvAluguel_DoubleClick(object sender, EventArgs e)
-        //{
-        //    TestePendenciaForm ts = new TestePendenciaForm(clienteCorrente);
-        //    ts.Show();
-        //}
     }
 }

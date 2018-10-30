@@ -4,15 +4,16 @@ using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Linq.Expressions;
 using static Dapper.SqlMapper;
 
 namespace Locadora.DataAccess.DataAccess
 {
     public class AlugarDataAccess: DataAccessBase
     {
-        public void InserirAluguel(Aluguel al)
+        public void InserirAluguel(Aluguel aluguel)
         {           
-            al.DataHora = DateTime.Now;            
+            aluguel.DataHora = DateTime.Now;            
             
             ConectarSQL();
             int id = conexao.Query<int>(@"INSERT INTO aluguel 
@@ -32,29 +33,27 @@ namespace Locadora.DataAccess.DataAccess
                                                           @ValorMulta, 
                                                           @Pago, 
                                                           @DataEntrega, 
-                                                          @DataPrevisaoEntrega) ", al).Single();
-            al.Id = id;
+                                                          @DataPrevisaoEntrega) ", aluguel).Single();
+            aluguel.Id = id;
 
-            foreach (var item in al.Items)  
+            foreach (var item in aluguel.Items)
             {
-                conexao.Execute("insert into ItemAluguel (Id_Aluguel, Id_Midia, Quantidade, StatusDevolucao) values (@IdAluguel, @IdMidia, @Quantidade, @StatusDevolucao)",
-                    new {
-                        IdAluguel = id,
-                        IdMidia = item.Midia.Id,                        
-                        item.Quantidade,
-                        StatusDevolucao = item.StatusDevolucao,  
-                });                           
+                item.Aluguel = aluguel;
+                InserirItemAluguel(item);
+                DarBaixaEstoque(item.Midia);
             }
-            foreach (var item in al.Items)
-            {               
-                conexao.Execute("update MIdia set QuantidadeAlugada = @QuantidadeAlugada + 1 where Id = @idMidia",
-                    new {
-                        QuantidadeAlugada = item.Midia.QuantidadeAlugada,
-                        idMidia = item.Midia.Id
-                    });
-            }
-             
+
             DesconectarSQL();
+        }
+
+        private void DarBaixaEstoque(Midia midia)
+        {
+            conexao.Execute("update MIdia set QuantidadeAlugada = QuantidadeAlugada + 1 where Id = @Id", midia);
+        }
+
+        private void InserirItemAluguel(ItemAluguel item)
+        {
+            conexao.Execute("insert into ItemAluguel (Id_Aluguel, Id_Midia, Quantidade, StatusDevolucao) values (@Id_Aluguel, @Id_Midia, @Quantidade, @StatusDevolucao)", item);
         }
 
         public IEnumerable<Cliente> PesquisarPorPendencia(string nome, string status)
@@ -97,7 +96,41 @@ namespace Locadora.DataAccess.DataAccess
             DesconectarSQL();
 
             return clientes;
-        }     
+        }
 
+        public void DevolverAluguel(Aluguel aluguel)
+        {
+            ConectarSQL();
+            foreach (var item in aluguel.Items.Where(item => item.StatusDevolucao))
+            {
+                 DevolverItem(item);
+                 DevolverEstoque(item.Midia);
+            }
+
+            if (aluguel.Items.All(item => item.StatusDevolucao))
+            {                
+                aluguel.DataEntrega = DateTime.Now;
+                PagarAluguel(aluguel);
+                //Colocar o Valor Total no Caixa
+                //Podemos colocar os descontos e multas apenas para apreciacao
+            }
+
+            DesconectarSQL();
+        }
+
+        private void PagarAluguel(Aluguel aluguel)
+        {
+            conexao.Execute("update Aluguel set Pago = 1, DataEntrega = @DataEntrega where Id = @Id", aluguel);
+        }
+
+        private void DevolverEstoque(Midia midia)
+        {
+            conexao.Execute("update Midia set QuantidadeAlugada = QuantidadeAlugada - 1 where Id = @Id", midia);
+        }
+
+        private void DevolverItem(ItemAluguel item)
+        {
+            conexao.Execute("update ItemAluguel set StatusDevolucao = @StatusDevolucao where Id_Aluguel = @Id_Aluguel and Id_Midia = @Id_Midia", item);
+        }
     }
 }

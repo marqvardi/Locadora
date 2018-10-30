@@ -28,11 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgvPesquisar = new System.Windows.Forms.DataGridView();
-            this.clnId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clnNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clnDataNascimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clnAtivo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.textBoxResultado = new System.Windows.Forms.TextBox();
             this.radioButtonNome = new System.Windows.Forms.RadioButton();
             this.radioButtonID = new System.Windows.Forms.RadioButton();
@@ -44,77 +39,32 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dgvItensAlugados = new System.Windows.Forms.DataGridView();
+            this.buttonDevolver = new System.Windows.Forms.Button();
+            this.clnAtivo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.clnDataNascimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clnNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clnId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvPesquisar = new System.Windows.Forms.DataGridView();
             this.IdMidiaCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NomeMidiaCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.QtdCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StatusDevolucaoCol = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
-            this.IdClienteCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataHoraCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DataPrevisaoCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ValorTotalCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ValorMultaCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ValorDescontoCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ValorSubTotalCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StatusCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DataEntregaCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PagoCol = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.DataHoraCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPesquisar)).BeginInit();
+            this.StatusCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ValorSubTotalCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ValorDescontoCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ValorMultaCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ValorTotalCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdClienteCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAluguel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItensAlugados)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPesquisar)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dgvPesquisar
-            // 
-            this.dgvPesquisar.AllowUserToAddRows = false;
-            this.dgvPesquisar.AllowUserToDeleteRows = false;
-            this.dgvPesquisar.AllowUserToOrderColumns = true;
-            this.dgvPesquisar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvPesquisar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPesquisar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.clnId,
-            this.clnNome,
-            this.clnDataNascimento,
-            this.clnAtivo});
-            this.dgvPesquisar.Location = new System.Drawing.Point(12, 177);
-            this.dgvPesquisar.Name = "dgvPesquisar";
-            this.dgvPesquisar.ReadOnly = true;
-            this.dgvPesquisar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPesquisar.Size = new System.Drawing.Size(1282, 224);
-            this.dgvPesquisar.TabIndex = 0;
-            this.dgvPesquisar.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPesquisar_CellClick);
-            // 
-            // clnId
-            // 
-            this.clnId.DataPropertyName = "Id";
-            this.clnId.HeaderText = "Id";
-            this.clnId.Name = "clnId";
-            this.clnId.ReadOnly = true;
-            // 
-            // clnNome
-            // 
-            this.clnNome.DataPropertyName = "Nome";
-            this.clnNome.HeaderText = " Nome";
-            this.clnNome.Name = "clnNome";
-            this.clnNome.ReadOnly = true;
-            // 
-            // clnDataNascimento
-            // 
-            this.clnDataNascimento.DataPropertyName = "DataNascimento";
-            this.clnDataNascimento.HeaderText = "Data de Nascimento";
-            this.clnDataNascimento.Name = "clnDataNascimento";
-            this.clnDataNascimento.ReadOnly = true;
-            this.clnDataNascimento.Width = 200;
-            // 
-            // clnAtivo
-            // 
-            this.clnAtivo.DataPropertyName = "Ativo";
-            this.clnAtivo.HeaderText = "Ativo (S/N)";
-            this.clnAtivo.Name = "clnAtivo";
-            this.clnAtivo.ReadOnly = true;
             // 
             // textBoxResultado
             // 
@@ -122,7 +72,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxResultado.Location = new System.Drawing.Point(19, 65);
             this.textBoxResultado.Name = "textBoxResultado";
-            this.textBoxResultado.Size = new System.Drawing.Size(887, 20);
+            this.textBoxResultado.Size = new System.Drawing.Size(899, 20);
             this.textBoxResultado.TabIndex = 2;
             // 
             // radioButtonNome
@@ -159,7 +109,7 @@
             this.groupBox1.Controls.Add(this.radioButtonNome);
             this.groupBox1.Location = new System.Drawing.Point(12, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(921, 133);
+            this.groupBox1.Size = new System.Drawing.Size(933, 133);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Detalhes:";
@@ -169,7 +119,10 @@
             this.comboBoxPendencia.FormattingEnabled = true;
             this.comboBoxPendencia.Items.AddRange(new object[] {
             "Atrasado",
-            "Em dia"});
+            "Em dia",
+            "Entregue (com atraso)",
+            "Entregue em dia",
+            "Emprestado"});
             this.comboBoxPendencia.Location = new System.Drawing.Point(785, 99);
             this.comboBoxPendencia.Name = "comboBoxPendencia";
             this.comboBoxPendencia.Size = new System.Drawing.Size(121, 21);
@@ -178,7 +131,7 @@
             // buttonPesquisar
             // 
             this.buttonPesquisar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonPesquisar.Location = new System.Drawing.Point(687, 99);
+            this.buttonPesquisar.Location = new System.Drawing.Point(699, 99);
             this.buttonPesquisar.Name = "buttonPesquisar";
             this.buttonPesquisar.Size = new System.Drawing.Size(75, 23);
             this.buttonPesquisar.TabIndex = 5;
@@ -197,19 +150,19 @@
             this.dgvAluguel.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdCol,
             this.DataHoraCol,
-            this.PagoCol,
+            this.DataPrevisaoCol,
             this.DataEntregaCol,
+            this.PagoCol,
             this.StatusCol,
             this.ValorSubTotalCol,
             this.ValorDescontoCol,
             this.ValorMultaCol,
             this.ValorTotalCol,
-            this.DataPrevisaoCol,
             this.IdClienteCol});
             this.dgvAluguel.Location = new System.Drawing.Point(12, 430);
             this.dgvAluguel.Name = "dgvAluguel";
             this.dgvAluguel.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvAluguel.Size = new System.Drawing.Size(1282, 221);
+            this.dgvAluguel.Size = new System.Drawing.Size(1294, 221);
             this.dgvAluguel.TabIndex = 6;
             this.dgvAluguel.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAluguel_CellClick);
             // 
@@ -257,8 +210,69 @@
             this.dgvItensAlugados.Location = new System.Drawing.Point(12, 682);
             this.dgvItensAlugados.Name = "dgvItensAlugados";
             this.dgvItensAlugados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvItensAlugados.Size = new System.Drawing.Size(1282, 161);
+            this.dgvItensAlugados.Size = new System.Drawing.Size(1294, 134);
             this.dgvItensAlugados.TabIndex = 10;
+            // 
+            // buttonDevolver
+            // 
+            this.buttonDevolver.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonDevolver.Location = new System.Drawing.Point(1229, 822);
+            this.buttonDevolver.Name = "buttonDevolver";
+            this.buttonDevolver.Size = new System.Drawing.Size(77, 22);
+            this.buttonDevolver.TabIndex = 11;
+            this.buttonDevolver.Text = "Devolver";
+            this.buttonDevolver.UseVisualStyleBackColor = true;
+            this.buttonDevolver.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // clnAtivo
+            // 
+            this.clnAtivo.DataPropertyName = "Ativo";
+            this.clnAtivo.HeaderText = "Ativo (S/N)";
+            this.clnAtivo.Name = "clnAtivo";
+            this.clnAtivo.ReadOnly = true;
+            // 
+            // clnDataNascimento
+            // 
+            this.clnDataNascimento.DataPropertyName = "DataNascimento";
+            this.clnDataNascimento.HeaderText = "Data de Nascimento";
+            this.clnDataNascimento.Name = "clnDataNascimento";
+            this.clnDataNascimento.ReadOnly = true;
+            this.clnDataNascimento.Width = 200;
+            // 
+            // clnNome
+            // 
+            this.clnNome.DataPropertyName = "Nome";
+            this.clnNome.HeaderText = " Nome";
+            this.clnNome.Name = "clnNome";
+            this.clnNome.ReadOnly = true;
+            // 
+            // clnId
+            // 
+            this.clnId.DataPropertyName = "Id";
+            this.clnId.HeaderText = "Id";
+            this.clnId.Name = "clnId";
+            this.clnId.ReadOnly = true;
+            // 
+            // dgvPesquisar
+            // 
+            this.dgvPesquisar.AllowUserToAddRows = false;
+            this.dgvPesquisar.AllowUserToDeleteRows = false;
+            this.dgvPesquisar.AllowUserToOrderColumns = true;
+            this.dgvPesquisar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvPesquisar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPesquisar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clnId,
+            this.clnNome,
+            this.clnDataNascimento,
+            this.clnAtivo});
+            this.dgvPesquisar.Location = new System.Drawing.Point(12, 177);
+            this.dgvPesquisar.Name = "dgvPesquisar";
+            this.dgvPesquisar.ReadOnly = true;
+            this.dgvPesquisar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvPesquisar.Size = new System.Drawing.Size(1294, 224);
+            this.dgvPesquisar.TabIndex = 0;
+            this.dgvPesquisar.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPesquisar_CellClick);
             // 
             // IdMidiaCol
             // 
@@ -271,6 +285,7 @@
             this.NomeMidiaCol.DataPropertyName = "NomeMidia";
             this.NomeMidiaCol.HeaderText = "Nome da Midia";
             this.NomeMidiaCol.Name = "NomeMidiaCol";
+            this.NomeMidiaCol.Width = 300;
             // 
             // QtdCol
             // 
@@ -285,24 +300,19 @@
             this.StatusDevolucaoCol.Name = "StatusDevolucaoCol";
             this.StatusDevolucaoCol.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.StatusDevolucaoCol.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.StatusDevolucaoCol.Width = 200;
             // 
-            // button1
+            // IdCol
             // 
-            this.button1.Location = new System.Drawing.Point(843, 656);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.IdCol.DataPropertyName = "Id";
+            this.IdCol.HeaderText = "ID Transacao";
+            this.IdCol.Name = "IdCol";
             // 
-            // IdClienteCol
+            // DataHoraCol
             // 
-            this.IdClienteCol.DataPropertyName = "IdCliente";
-            this.IdClienteCol.HeaderText = "ID do cliente";
-            this.IdClienteCol.Name = "IdClienteCol";
-            this.IdClienteCol.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.IdClienteCol.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.DataHoraCol.DataPropertyName = "DataHora";
+            this.DataHoraCol.HeaderText = "Data da locacao";
+            this.DataHoraCol.Name = "DataHoraCol";
             // 
             // DataPrevisaoCol
             // 
@@ -311,46 +321,6 @@
             this.DataPrevisaoCol.Name = "DataPrevisaoCol";
             this.DataPrevisaoCol.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.DataPrevisaoCol.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // ValorTotalCol
-            // 
-            this.ValorTotalCol.DataPropertyName = "ValorTotal";
-            this.ValorTotalCol.HeaderText = "Valor Total";
-            this.ValorTotalCol.Name = "ValorTotalCol";
-            this.ValorTotalCol.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ValorTotalCol.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // ValorMultaCol
-            // 
-            this.ValorMultaCol.DataPropertyName = "ValorMulta";
-            this.ValorMultaCol.HeaderText = "Valor da multa";
-            this.ValorMultaCol.Name = "ValorMultaCol";
-            this.ValorMultaCol.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ValorMultaCol.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // ValorDescontoCol
-            // 
-            this.ValorDescontoCol.DataPropertyName = "ValorDesconto";
-            this.ValorDescontoCol.HeaderText = "Valor do desconto";
-            this.ValorDescontoCol.Name = "ValorDescontoCol";
-            this.ValorDescontoCol.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ValorDescontoCol.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // ValorSubTotalCol
-            // 
-            this.ValorSubTotalCol.DataPropertyName = "ValorSubTotal";
-            this.ValorSubTotalCol.HeaderText = "Valor SubTotal";
-            this.ValorSubTotalCol.Name = "ValorSubTotalCol";
-            this.ValorSubTotalCol.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ValorSubTotalCol.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // StatusCol
-            // 
-            this.StatusCol.DataPropertyName = "Status";
-            this.StatusCol.HeaderText = "Status";
-            this.StatusCol.Name = "StatusCol";
-            this.StatusCol.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.StatusCol.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // DataEntregaCol
             // 
@@ -366,24 +336,60 @@
             this.PagoCol.HeaderText = "Pago";
             this.PagoCol.Name = "PagoCol";
             // 
-            // DataHoraCol
+            // StatusCol
             // 
-            this.DataHoraCol.DataPropertyName = "DataHora";
-            this.DataHoraCol.HeaderText = "Data da locacao";
-            this.DataHoraCol.Name = "DataHoraCol";
+            this.StatusCol.DataPropertyName = "Status";
+            this.StatusCol.HeaderText = "Status";
+            this.StatusCol.Name = "StatusCol";
+            this.StatusCol.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.StatusCol.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // IdCol
+            // ValorSubTotalCol
             // 
-            this.IdCol.DataPropertyName = "Id";
-            this.IdCol.HeaderText = "ID Transacao";
-            this.IdCol.Name = "IdCol";
+            this.ValorSubTotalCol.DataPropertyName = "ValorSubTotal";
+            this.ValorSubTotalCol.HeaderText = "Valor SubTotal";
+            this.ValorSubTotalCol.Name = "ValorSubTotalCol";
+            this.ValorSubTotalCol.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ValorSubTotalCol.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // ValorDescontoCol
+            // 
+            this.ValorDescontoCol.DataPropertyName = "ValorDesconto";
+            this.ValorDescontoCol.HeaderText = "Valor do desconto";
+            this.ValorDescontoCol.Name = "ValorDescontoCol";
+            this.ValorDescontoCol.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ValorDescontoCol.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // ValorMultaCol
+            // 
+            this.ValorMultaCol.DataPropertyName = "ValorMulta";
+            this.ValorMultaCol.HeaderText = "Valor da multa";
+            this.ValorMultaCol.Name = "ValorMultaCol";
+            this.ValorMultaCol.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ValorMultaCol.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // ValorTotalCol
+            // 
+            this.ValorTotalCol.DataPropertyName = "ValorTotal";
+            this.ValorTotalCol.HeaderText = "Valor Total";
+            this.ValorTotalCol.Name = "ValorTotalCol";
+            this.ValorTotalCol.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ValorTotalCol.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // IdClienteCol
+            // 
+            this.IdClienteCol.DataPropertyName = "IdCliente";
+            this.IdClienteCol.HeaderText = "ID do cliente";
+            this.IdClienteCol.Name = "IdClienteCol";
+            this.IdClienteCol.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.IdClienteCol.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // AluguelPendentesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1308, 855);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(1320, 854);
+            this.Controls.Add(this.buttonDevolver);
             this.Controls.Add(this.dgvItensAlugados);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -396,19 +402,17 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Aluguel Pendente";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPesquisar)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAluguel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItensAlugados)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPesquisar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dgvPesquisar;
         private System.Windows.Forms.TextBox textBoxResultado;
         private System.Windows.Forms.RadioButton radioButtonNome;
         private System.Windows.Forms.RadioButton radioButtonID;
@@ -420,25 +424,26 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dgvItensAlugados;
         private System.Windows.Forms.ComboBox comboBoxPendencia;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clnId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clnNome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clnDataNascimento;
+        private System.Windows.Forms.Button buttonDevolver;
         private System.Windows.Forms.DataGridViewCheckBoxColumn clnAtivo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clnDataNascimento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clnNome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clnId;
+        private System.Windows.Forms.DataGridView dgvPesquisar;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdMidiaCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn NomeMidiaCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn QtdCol;
         private System.Windows.Forms.DataGridViewCheckBoxColumn StatusDevolucaoCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn DataHoraCol;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn PagoCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DataPrevisaoCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn DataEntregaCol;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn PagoCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn StatusCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn ValorSubTotalCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn ValorDescontoCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn ValorMultaCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn ValorTotalCol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DataPrevisaoCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdClienteCol;
     }
 }

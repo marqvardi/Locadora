@@ -26,10 +26,42 @@
             }
         }
 
-        public Midia Midia { get; internal set; }
+
+        private Midia _midia;
+
+        public Midia Midia
+        {
+            get
+            {
+                return _midia;
+            }
+            internal set
+            {
+                _midia = value;
+                Id_Midia = value != null
+                    ? _midia.Id 
+                    : 0;
+            }
+        }
+
         public int Id_Midia { get; internal set; }
 
-        public Aluguel Aluguel { get; internal set; }
+
+        private Aluguel _aluguel;
+        public Aluguel Aluguel {
+            get
+            {
+                return _aluguel;
+            }
+            internal set
+            {
+                _aluguel = value;
+                Id_Aluguel = value != null
+                    ? _aluguel.Id
+                    : 0;
+            }
+        }
+
         public int Id_Aluguel { get; internal set; }
     }
 }
